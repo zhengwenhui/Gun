@@ -1,0 +1,63 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <style name="transparent_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="square_style">
+        <item name="android:layout_width">@dimen/square_size</item>
+        <item name="android:layout_height">@dimen/square_size</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">#FF0f0f0f</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+
+    <style name="square_dialog_style">
+        <item name="android:layout_width">@dimen/square_size</item>
+        <item name="android:layout_height">@dimen/square_size</item>
+        <item name="android:background">@drawable/green_dark</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">#FF0f0f0f</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:onClick">onDialogClick</item>
+    </style>
+
+    <style name="square_style2">
+        <item name="android:layout_width">@dimen/square_size2</item>
+        <item name="android:layout_height">@dimen/square_size2</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">#FF0f0f0f</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+
+    <style name="square_dialog_style2">
+        <item name="android:layout_width">@dimen/square_size2</item>
+        <item name="android:layout_height">@dimen/square_size2</item>
+        <item name="android:background">@drawable/purple_dark</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">#FF0f0f0f</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:onClick">onDialogClick</item>
+    </style>
+
+</resources>

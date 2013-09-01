@@ -1,0 +1,18 @@
+<resources>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+
+    <dimen name="margin_interval">7dp</dimen>
+    
+    <dimen name="layout_marginRight">20dp</dimen>
+    <dimen name="layout_marginTop">40dp</dimen>
+    <dimen name="layout_marginBottom">40dp</dimen>
+    
+    <dimen name="paddingLeft">15dp</dimen>
+    <dimen name="square_size">55dp</dimen>
+    <dimen name="square_size2">38dp</dimen>
+    
+    <dimen name="toolbar_height">52dip</dimen>
+    <dimen name="squares_interval">2dp</dimen>
+</resources>

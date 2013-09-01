@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:panel="http://schemas.android.com/apk/res/com.yesterdaylike.gun"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/sudoku_type_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/page_number_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/layout_marginRight"
+        android:layout_marginTop="@dimen/layout_marginTop"
+        android:background="@drawable/seek_thumb"
+        android:onClick="onButtonClick" />
+
+    <Button
+        android:id="@+id/help_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/layout_marginBottom"
+        android:layout_marginRight="@dimen/layout_marginRight"
+        android:background="@drawable/btn_back_image_normal"
+        android:onClick="onButtonClick" />
+
+    <Button
+        android:id="@+id/feedback_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/help_button"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/layout_marginBottom"
+        android:layout_marginRight="@dimen/layout_marginRight"
+        android:background="@drawable/btn_back_image_normal"
+        android:onClick="onButtonClick" />
+
+    <com.yesterdaylike.gun.Panel
+        android:id="@+id/help_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        panel:animationDuration="500"
+        panel:content="@+id/panelContent"
+        panel:linearFlying="true"
+        panel:position="top"
+        panel:weight="100%p" >
+
+        <TextView
+            android:id="@+id/panelContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:gravity="top"
+            android:padding="10dp"
+            android:text="@string/help"
+            android:textSize="24dp" />
+    </com.yesterdaylike.gun.Panel>
+
+    <com.yesterdaylike.gun.Panel
+        android:id="@+id/feedback_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        panel:animationDuration="500"
+        panel:content="@+id/panelContent2"
+        panel:linearFlying="true"
+        panel:position="top" >
+
+        <LinearLayout
+            android:id="@+id/panelContent2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/subject"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/subject"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/message"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:hint="@string/feedback_hint"
+                android:minLines="10"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/feedback_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:minWidth="150dp"
+                android:onClick="onButtonClick"
+                android:text="@android:string/ok" />
+        </LinearLayout>
+    </com.yesterdaylike.gun.Panel>
+
+</RelativeLayout>
