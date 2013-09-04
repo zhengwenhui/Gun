@@ -92,7 +92,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 
 		for (int i = 0; i < 4; i++) {
 			Item item = new Item();
-			View view = layoutInflater.inflate(R.layout.sudoku_item, null);
+			View view = layoutInflater.inflate(R.layout.play_item, null);
 			item.background = (View)view.findViewById(R.id.background);
 			item.fire = (View)view.findViewById(R.id.fire);
 			item.gun = (ImageButton)view.findViewById(R.id.gun);

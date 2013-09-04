@@ -17,8 +17,7 @@ public final class R {
         public static final int shake_y=0x7f040005;
     }
     public static final class array {
-        public static final int GUN=0x7f0a0000;
-        public static final int GUN_KIND=0x7f0a0001;
+        public static final int gun_kind_name=0x7f0a0000;
     }
     public static final class attr {
         /**  Defines panel animation duration in ms. 
@@ -158,107 +157,113 @@ containing a value of this type.
         public static final int black_powder_rifle_3=0x7f02001c;
         public static final int black_powder_rifle_4=0x7f02001d;
         public static final int black_powder_rifle_5=0x7f02001e;
-        public static final int blue_dark=0x7f02001f;
-        public static final int blue_light=0x7f020020;
-        public static final int btn_back_image_normal=0x7f020021;
-        public static final int combo_gun_0=0x7f020022;
-        public static final int combo_gun_1=0x7f020023;
-        public static final int combo_gun_2=0x7f020024;
-        public static final int combo_gun_3=0x7f020025;
-        public static final int combo_gun_4=0x7f020026;
-        public static final int combo_gun_5=0x7f020027;
-        public static final int combo_gun_6=0x7f020028;
-        public static final int dialog=0x7f020029;
-        public static final int downbar_shadow=0x7f02002a;
-        public static final int fire=0x7f02002b;
-        public static final int flash=0x7f02002c;
-        public static final int gray_dark=0x7f02002d;
-        public static final int gray_light=0x7f02002e;
-        public static final int green_dark=0x7f02002f;
-        public static final int green_light=0x7f020030;
-        public static final int handgun0=0x7f020031;
-        public static final int handgun1=0x7f020032;
-        public static final int handgun2=0x7f020033;
-        public static final int handgun3=0x7f020034;
-        public static final int handgun4=0x7f020035;
-        public static final int handgun5=0x7f020036;
-        public static final int handgun6=0x7f020037;
-        public static final int ic_action_search=0x7f020038;
-        public static final int ic_launcher=0x7f020039;
-        public static final int ic_menu_help_holo_light=0x7f02003a;
-        public static final int icon=0x7f02003b;
-        public static final int orange_dark=0x7f02003c;
-        public static final int orange_light=0x7f02003d;
-        public static final int purple_dark=0x7f02003e;
-        public static final int purple_light=0x7f02003f;
-        public static final int red_dark=0x7f020040;
-        public static final int red_light=0x7f020041;
-        public static final int revolver_0=0x7f020042;
-        public static final int revolver_1=0x7f020043;
-        public static final int revolver_2=0x7f020044;
-        public static final int revolver_3=0x7f020045;
-        public static final int revolver_4=0x7f020046;
-        public static final int revolver_5=0x7f020047;
-        public static final int revolver_6=0x7f020048;
-        public static final int revolver_7=0x7f020049;
-        public static final int revolver_8=0x7f02004a;
-        public static final int rifles0=0x7f02004b;
-        public static final int rifles1=0x7f02004c;
-        public static final int rifles10=0x7f02004d;
-        public static final int rifles2=0x7f02004e;
-        public static final int rifles3=0x7f02004f;
-        public static final int rifles4=0x7f020050;
-        public static final int rifles5=0x7f020051;
-        public static final int rifles6=0x7f020052;
-        public static final int rifles7=0x7f020053;
-        public static final int rifles8=0x7f020054;
-        public static final int rifles9=0x7f020055;
-        public static final int seek_thumb=0x7f020056;
-        public static final int seek_thumb_normal=0x7f020057;
-        public static final int seek_thumb_pressed=0x7f020058;
-        public static final int seek_thumb_selected=0x7f020059;
-        public static final int shotgun_0=0x7f02005a;
-        public static final int shotgun_1=0x7f02005b;
-        public static final int shotgun_2=0x7f02005c;
-        public static final int shotgun_3=0x7f02005d;
-        public static final int shotgun_4=0x7f02005e;
-        public static final int shotgun_5=0x7f02005f;
-        public static final int shotgun_6=0x7f020060;
-        public static final int shotgun_7=0x7f020061;
-        public static final int specialty_0=0x7f020062;
-        public static final int specialty_1=0x7f020063;
-        public static final int specialty_2=0x7f020064;
-        public static final int specialty_3=0x7f020065;
-        public static final int specialty_4=0x7f020066;
-        public static final int specialty_5=0x7f020067;
-        public static final int specialty_6=0x7f020068;
-        public static final int specialty_7=0x7f020069;
-        public static final int tactical_rifle_0=0x7f02006a;
-        public static final int tactical_rifle_1=0x7f02006b;
-        public static final int tactical_rifle_10=0x7f02006c;
-        public static final int tactical_rifle_2=0x7f02006d;
-        public static final int tactical_rifle_3=0x7f02006e;
-        public static final int tactical_rifle_4=0x7f02006f;
-        public static final int tactical_rifle_5=0x7f020070;
-        public static final int tactical_rifle_6=0x7f020071;
-        public static final int tactical_rifle_7=0x7f020072;
-        public static final int tactical_rifle_8=0x7f020073;
-        public static final int tactical_rifle_9=0x7f020074;
-        public static final int tactical_shotgun_0=0x7f020075;
-        public static final int tactical_shotgun_1=0x7f020076;
-        public static final int tactical_shotgun_2=0x7f020077;
-        public static final int tactical_shotgun_3=0x7f020078;
-        public static final int tactical_shotgun_4=0x7f020079;
-        public static final int tactical_shotgun_5=0x7f02007a;
-        public static final int tactical_shotgun_6=0x7f02007b;
-        public static final int tactical_shotgun_7=0x7f02007c;
-        public static final int tactical_shotgun_8=0x7f02007d;
-        public static final int white=0x7f02007e;
-        public static final int zhengwenhui=0x7f02007f;
+        public static final int blue_button=0x7f02001f;
+        public static final int blue_button_normal=0x7f020020;
+        public static final int blue_button_pressed=0x7f020021;
+        public static final int blue_dark=0x7f020022;
+        public static final int blue_light=0x7f020023;
+        public static final int combo_gun_0=0x7f020024;
+        public static final int combo_gun_1=0x7f020025;
+        public static final int combo_gun_2=0x7f020026;
+        public static final int combo_gun_3=0x7f020027;
+        public static final int combo_gun_4=0x7f020028;
+        public static final int combo_gun_5=0x7f020029;
+        public static final int combo_gun_6=0x7f02002a;
+        public static final int dialog=0x7f02002b;
+        public static final int downbar_shadow=0x7f02002c;
+        public static final int fire=0x7f02002d;
+        public static final int flash=0x7f02002e;
+        public static final int fuzzy=0x7f02002f;
+        public static final int gray_dark=0x7f020030;
+        public static final int gray_light=0x7f020031;
+        public static final int green_dark=0x7f020032;
+        public static final int green_light=0x7f020033;
+        public static final int handgun0=0x7f020034;
+        public static final int handgun1=0x7f020035;
+        public static final int handgun2=0x7f020036;
+        public static final int handgun3=0x7f020037;
+        public static final int handgun4=0x7f020038;
+        public static final int handgun5=0x7f020039;
+        public static final int handgun6=0x7f02003a;
+        public static final int ic_action_search=0x7f02003b;
+        public static final int ic_launcher=0x7f02003c;
+        public static final int ic_menu_help_holo_light=0x7f02003d;
+        public static final int orange_dark=0x7f02003e;
+        public static final int orange_light=0x7f02003f;
+        public static final int purple_dark=0x7f020040;
+        public static final int purple_light=0x7f020041;
+        public static final int red_button=0x7f020042;
+        public static final int red_button_normal=0x7f020043;
+        public static final int red_button_pressed=0x7f020044;
+        public static final int red_dark=0x7f020045;
+        public static final int red_light=0x7f020046;
+        public static final int revolver_0=0x7f020047;
+        public static final int revolver_1=0x7f020048;
+        public static final int revolver_2=0x7f020049;
+        public static final int revolver_3=0x7f02004a;
+        public static final int revolver_4=0x7f02004b;
+        public static final int revolver_5=0x7f02004c;
+        public static final int revolver_6=0x7f02004d;
+        public static final int revolver_7=0x7f02004e;
+        public static final int revolver_8=0x7f02004f;
+        public static final int rifles0=0x7f020050;
+        public static final int rifles1=0x7f020051;
+        public static final int rifles10=0x7f020052;
+        public static final int rifles2=0x7f020053;
+        public static final int rifles3=0x7f020054;
+        public static final int rifles4=0x7f020055;
+        public static final int rifles5=0x7f020056;
+        public static final int rifles6=0x7f020057;
+        public static final int rifles7=0x7f020058;
+        public static final int rifles8=0x7f020059;
+        public static final int rifles9=0x7f02005a;
+        public static final int seek_thumb_normal=0x7f02005b;
+        public static final int seek_thumb_pressed=0x7f02005c;
+        public static final int seek_thumb_selected=0x7f02005d;
+        public static final int shotgun_0=0x7f02005e;
+        public static final int shotgun_1=0x7f02005f;
+        public static final int shotgun_2=0x7f020060;
+        public static final int shotgun_3=0x7f020061;
+        public static final int shotgun_4=0x7f020062;
+        public static final int shotgun_5=0x7f020063;
+        public static final int shotgun_6=0x7f020064;
+        public static final int shotgun_7=0x7f020065;
+        public static final int specialty_0=0x7f020066;
+        public static final int specialty_1=0x7f020067;
+        public static final int specialty_2=0x7f020068;
+        public static final int specialty_3=0x7f020069;
+        public static final int specialty_4=0x7f02006a;
+        public static final int specialty_5=0x7f02006b;
+        public static final int specialty_6=0x7f02006c;
+        public static final int specialty_7=0x7f02006d;
+        public static final int tactical_rifle_0=0x7f02006e;
+        public static final int tactical_rifle_1=0x7f02006f;
+        public static final int tactical_rifle_10=0x7f020070;
+        public static final int tactical_rifle_2=0x7f020071;
+        public static final int tactical_rifle_3=0x7f020072;
+        public static final int tactical_rifle_4=0x7f020073;
+        public static final int tactical_rifle_5=0x7f020074;
+        public static final int tactical_rifle_6=0x7f020075;
+        public static final int tactical_rifle_7=0x7f020076;
+        public static final int tactical_rifle_8=0x7f020077;
+        public static final int tactical_rifle_9=0x7f020078;
+        public static final int tactical_shotgun_0=0x7f020079;
+        public static final int tactical_shotgun_1=0x7f02007a;
+        public static final int tactical_shotgun_2=0x7f02007b;
+        public static final int tactical_shotgun_3=0x7f02007c;
+        public static final int tactical_shotgun_4=0x7f02007d;
+        public static final int tactical_shotgun_5=0x7f02007e;
+        public static final int tactical_shotgun_6=0x7f02007f;
+        public static final int tactical_shotgun_7=0x7f020080;
+        public static final int tactical_shotgun_8=0x7f020081;
+        public static final int white=0x7f020082;
+        public static final int yellow_button=0x7f020083;
+        public static final int yellow_button_normal=0x7f020084;
+        public static final int yellow_button_pressed=0x7f020085;
     }
     public static final class id {
         public static final int action_settings=0x7f060021;
-        public static final int background=0x7f06001c;
+        public static final int background=0x7f06001e;
         public static final int blank=0x7f060007;
         public static final int bottom=0x7f060001;
         public static final int closing_time_textview=0x7f06001a;
@@ -267,10 +272,10 @@ containing a value of this type.
         public static final int feedback_button=0x7f06000b;
         public static final int feedback_panel=0x7f06000e;
         public static final int feedback_send=0x7f060012;
-        public static final int fire=0x7f06001d;
-        public static final int gun=0x7f06001e;
-        public static final int gun_category=0x7f06001f;
-        public static final int gun_category_name=0x7f060020;
+        public static final int fire=0x7f06001f;
+        public static final int gun=0x7f060020;
+        public static final int gun_category=0x7f06001c;
+        public static final int gun_category_name=0x7f06001d;
         public static final int help_button=0x7f06000a;
         public static final int help_panel=0x7f06000c;
         public static final int left=0x7f060002;
@@ -295,8 +300,8 @@ containing a value of this type.
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_play=0x7f030001;
-        public static final int sudoku_item=0x7f030002;
-        public static final int viewpager_item=0x7f030003;
+        public static final int main_item=0x7f030002;
+        public static final int play_item=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
@@ -388,14 +393,11 @@ containing a value of this type.
     }
     public static final class string {
         public static final int app_name=0x7f090000;
-        public static final int feedback_hint=0x7f090005;
-        public static final int hello_world=0x7f090001;
-        public static final int help=0x7f090004;
-        public static final int menu_settings=0x7f090002;
-        public static final int select_mail_software=0x7f090007;
-        public static final int start=0x7f090008;
-        public static final int subject=0x7f090006;
-        public static final int title_activity_main=0x7f090003;
+        public static final int feedback_hint=0x7f090002;
+        public static final int help=0x7f090001;
+        public static final int select_mail_software=0x7f090004;
+        public static final int start=0x7f090005;
+        public static final int subject=0x7f090003;
     }
     public static final class style {
         /** 
@@ -454,7 +456,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:animationDuration
+          @attr name com.yesterdaylike.gun:animationDuration
         */
         public static final int Panel_animationDuration = 0;
         /**
@@ -466,7 +468,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:content
+          @attr name com.yesterdaylike.gun:content
         */
         public static final int Panel_content = 2;
         /**
@@ -482,7 +484,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:linearFlying
+          @attr name com.yesterdaylike.gun:linearFlying
         */
         public static final int Panel_linearFlying = 3;
         /**
@@ -503,7 +505,7 @@ containing a value of this type.
 <tr><td><code>right</code></td><td>3</td><td> Panel placed at right of the screen. </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name android:position
+          @attr name com.yesterdaylike.gun:position
         */
         public static final int Panel_position = 1;
         /**
@@ -521,7 +523,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:weight
+          @attr name com.yesterdaylike.gun:weight
         */
         public static final int Panel_weight = 4;
     };

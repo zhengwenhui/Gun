@@ -17,7 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="@dimen/layout_marginRight"
         android:layout_marginTop="@dimen/layout_marginTop"
-        android:background="@drawable/seek_thumb"
+        android:background="@drawable/yellow_button"
         android:onClick="onButtonClick" />
 
     <Button
@@ -28,7 +28,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/layout_marginBottom"
         android:layout_marginRight="@dimen/layout_marginRight"
-        android:background="@drawable/btn_back_image_normal"
+        android:background="@drawable/blue_button"
         android:onClick="onButtonClick" />
 
     <Button
@@ -39,7 +39,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/layout_marginBottom"
         android:layout_marginRight="@dimen/layout_marginRight"
-        android:background="@drawable/btn_back_image_normal"
+        android:background="@drawable/red_button"
         android:onClick="onButtonClick" />
 
     <com.yesterdaylike.gun.Panel

@@ -1,0 +1,28 @@
+<resources>
+
+    <item name="views" type="id"/>
+    <item name="values" type="id"/>
+    <item name="number" type="id"/>
+    <item name="blank" type="id"/>
+
+    <string name="app_name">枪</string>
+    <string name="help">hui\nis\nbest\none\nhaha\nbasa\n.Bounce\nInterpolator\nhui\nis\nbest\none\nhaha\nbasa\n.Bounce\nInterpolator\nhui\nis\nbest\none\nhaha\nbasa\n.Bounce\nInterpolator\nzheng\nwen\nhui\nis\nbest\none\nhaha\nbasa\n.</string>
+    <string name="feedback_hint">请填写您的意见</string>
+    <string name="subject">添加主题</string>
+    <string name="select_mail_software">用哪一个软件发送邮件？</string>
+    <string name="start">开始</string>
+
+
+    <string-array name="gun_kind_name">
+        <item>手枪</item>
+        <item>步枪</item>
+        <item>战术步枪</item>
+        <item>霰弹枪</item>
+        <item>战术霰弹枪</item>
+        <item>组合枪</item>
+        <item>黑火药步枪</item>
+        <item>左轮手枪</item>
+        <item>特产枪</item>
+    </string-array>
+
+</resources>

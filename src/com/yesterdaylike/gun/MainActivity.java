@@ -58,16 +58,16 @@ implements OnPageChangeListener, OnTouchListener{
 		
 		LayoutInflater layoutInflater = getLayoutInflater();
 
-		View view1 = layoutInflater.inflate(R.layout.viewpager_item, null);
-		View view2 = layoutInflater.inflate(R.layout.viewpager_item, null);
-		View view3 = layoutInflater.inflate(R.layout.viewpager_item, null);
-		View view4 = layoutInflater.inflate(R.layout.viewpager_item, null);
-		View view5 = layoutInflater.inflate(R.layout.viewpager_item, null);
-		View view6 = layoutInflater.inflate(R.layout.viewpager_item, null);
-		View view7 = layoutInflater.inflate(R.layout.viewpager_item, null);
-		View view8 = layoutInflater.inflate(R.layout.viewpager_item, null);
-		View view9 = layoutInflater.inflate(R.layout.viewpager_item, null);
-		View view10 = layoutInflater.inflate(R.layout.viewpager_item, null);
+		View view1 = layoutInflater.inflate(R.layout.main_item, null);
+		View view2 = layoutInflater.inflate(R.layout.main_item, null);
+		View view3 = layoutInflater.inflate(R.layout.main_item, null);
+		View view4 = layoutInflater.inflate(R.layout.main_item, null);
+		View view5 = layoutInflater.inflate(R.layout.main_item, null);
+		View view6 = layoutInflater.inflate(R.layout.main_item, null);
+		View view7 = layoutInflater.inflate(R.layout.main_item, null);
+		View view8 = layoutInflater.inflate(R.layout.main_item, null);
+		View view9 = layoutInflater.inflate(R.layout.main_item, null);
+		View view10 = layoutInflater.inflate(R.layout.main_item, null);
 
 		mViewsList.add( view1 );
 		mViewsList.add( view2 );
@@ -81,7 +81,7 @@ implements OnPageChangeListener, OnTouchListener{
 		mViewsList.add( view10 );
 
 		mViewPager = (ViewPager)findViewById(R.id.sudoku_type_viewpager);
-		mAdapter = new MainPagerAdapter(mViewsList);
+		mAdapter = new MainPagerAdapter(this, mViewsList);
 		mViewPager.setAdapter(mAdapter);
 		mViewPager.setOnPageChangeListener(this);
 		mViewPager.setOnTouchListener(this);

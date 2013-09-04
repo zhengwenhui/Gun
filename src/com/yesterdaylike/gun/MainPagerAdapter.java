@@ -2,6 +2,7 @@ package com.yesterdaylike.gun;
 
 import java.util.List;
 
+import android.content.Context;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -26,21 +27,12 @@ public class MainPagerAdapter extends PagerAdapter {
 			R.drawable.specialty_7,
 	};
 	
-	private String[] mGunsName = {
-			"handgun",
-			"rifles",
-			"tactical_rifles",
-			"shotguns",
-			"tactical_shotguns",
-			"combo_guns",
-			"black_powder_rifles",
-			"revolvers",
-			"specialty",
-	};
+	private String[] mGunsName;
 
-	public MainPagerAdapter ( List<View> views ) {
+	public MainPagerAdapter ( Context context, List<View> views ) {
 		this.mViews = views;
 		mCount = mGuns.length;
+		mGunsName = context.getResources().getStringArray(R.array.gun_kind_name);
 	}
 
 	@Override
