@@ -276,6 +276,7 @@ containing a value of this type.
         public static final int gun=0x7f060020;
         public static final int gun_category=0x7f06001c;
         public static final int gun_category_name=0x7f06001d;
+        public static final int gun_viewpager=0x7f060013;
         public static final int help_button=0x7f06000a;
         public static final int help_panel=0x7f06000c;
         public static final int left=0x7f060002;
@@ -289,7 +290,6 @@ containing a value of this type.
         public static final int subject=0x7f060010;
         public static final int sudoku_id_textview=0x7f060017;
         public static final int sudoku_type_viewpager=0x7f060008;
-        public static final int sudoku_viewpager=0x7f060013;
         public static final int timer_button=0x7f06001b;
         public static final int timer_textview=0x7f060019;
         public static final int title_bar_layout=0x7f060015;

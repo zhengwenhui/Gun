@@ -108,10 +108,12 @@ implements OnPageChangeListener, OnTouchListener{
 
 		if(feedBackPanel.isOpen()){
 			feedBackPanel.onClick();
+			return;
 		}
 
 		if(helpPanel.isOpen()){
 			helpPanel.onClick();
+			return;
 		}
 
 		Intent intent = new Intent(this, PlayActivity.class);
@@ -175,9 +177,14 @@ implements OnPageChangeListener, OnTouchListener{
 			if(helpPanel.isOpen()){
 				helpPanel.onClick();
 			}
+			
 			break;
 		}
 	}
+	
+	public void sendMailByApache() {
+		
+    }  
 
 	@Override
 	public void onBackPressed() {

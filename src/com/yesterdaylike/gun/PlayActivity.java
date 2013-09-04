@@ -27,7 +27,7 @@ import com.yesterdaylike.gun.PlayPagerAdapter.OnInstantiateItemListener;
 
 public class PlayActivity extends Activity
 implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
-	private MyViewPager mViewPager;
+	private GunViewPager mViewPager;
 	private PlayPagerAdapter mAdapter;
 	private View titleBarLayout;
 	private View downBarLayout;
@@ -101,7 +101,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			mSudokuViewList.add( view );
 		}
 
-		mViewPager = (MyViewPager)findViewById(R.id.sudoku_viewpager);
+		mViewPager = (GunViewPager)findViewById(R.id.gun_viewpager);
 		mAdapter = new PlayPagerAdapter( soundBox,mSudokuViewList,mTypeNo);
 		mAdapter.setOnInstantiateItemListener(this);
 		mViewPager.setAdapter(mAdapter);
