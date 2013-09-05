@@ -30,10 +30,10 @@ implements OnPageChangeListener, OnTouchListener{
 	private Animation mAnimation;
 
 	private Panel helpPanel;
-	private Panel feedBackPanel;
+	//private Panel feedBackPanel;
 
-	private EditText messageEditText;
-	private EditText subjectEditText;
+	//private EditText messageEditText;
+	//private EditText subjectEditText;
 
 	private Vibrator vibrator;  
 	public static String TYPE_NO = "Type_No";
@@ -49,10 +49,10 @@ implements OnPageChangeListener, OnTouchListener{
 		mPageNumberButton.setText( String.valueOf( mCurrentIndex+1 ) );
 
 		helpPanel = (Panel)findViewById(R.id.help_panel);
-		feedBackPanel = (Panel)findViewById(R.id.feedback_panel);
+		//feedBackPanel = (Panel)findViewById(R.id.feedback_panel);
 
-		messageEditText = (EditText)findViewById(R.id.message);
-		subjectEditText = (EditText)findViewById(R.id.subject);
+		//messageEditText = (EditText)findViewById(R.id.message);
+		//subjectEditText = (EditText)findViewById(R.id.subject);
 		
 		mViewsList = new ArrayList<View>();
 		
@@ -106,10 +106,10 @@ implements OnPageChangeListener, OnTouchListener{
 
 	public void onClick( View view ){
 
-		if(feedBackPanel.isOpen()){
+		/*if(feedBackPanel.isOpen()){
 			feedBackPanel.onClick();
 			return;
-		}
+		}*/
 
 		if(helpPanel.isOpen()){
 			helpPanel.onClick();
@@ -130,21 +130,22 @@ implements OnPageChangeListener, OnTouchListener{
 
 		case R.id.help_button:
 			//°ïÖú
-			if(feedBackPanel.isOpen()){
+			/*if(feedBackPanel.isOpen()){
 				feedBackPanel.onClick();
-			}
+			}*/
 			helpPanel.onClick();
 			break;
 
 		case R.id.feedback_button:
+			onClick(null);
 			//·´À¡
-			if(helpPanel.isOpen()){
+			/*if(helpPanel.isOpen()){
 				helpPanel.onClick();
 			}
-			feedBackPanel.onClick();
+			feedBackPanel.onClick();*/
 			break;
 
-		case R.id.feedback_send:
+		/*case R.id.feedback_send:
 			//·¢ËÍ·´À¡
 			String message = messageEditText.getText().toString();
 			if( null != message && message.length()>0 ){
@@ -168,11 +169,11 @@ implements OnPageChangeListener, OnTouchListener{
 			if(feedBackPanel.isOpen()){
 				feedBackPanel.onClick();
 			}
-			break;
+			break;*/
 		default:
-			if(feedBackPanel.isOpen()){
+			/*if(feedBackPanel.isOpen()){
 				feedBackPanel.onClick();
-			}
+			}*/
 
 			if(helpPanel.isOpen()){
 				helpPanel.onClick();
@@ -189,10 +190,10 @@ implements OnPageChangeListener, OnTouchListener{
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		if(feedBackPanel.isOpen()){
+		/*if(feedBackPanel.isOpen()){
 			feedBackPanel.onClick();
 			return;
-		}
+		}*/
 
 		if(helpPanel.isOpen()){
 			helpPanel.onClick();
@@ -203,9 +204,9 @@ implements OnPageChangeListener, OnTouchListener{
 
 	public boolean onTouch(View v, MotionEvent event) {
 		// TODO Auto-generated method stub
-		if(feedBackPanel.isOpen()){
+		/*if(feedBackPanel.isOpen()){
 			feedBackPanel.onClick();
-		}
+		}*/
 
 		if(helpPanel.isOpen()){
 			helpPanel.onClick();
