@@ -21,25 +21,25 @@
         android:onClick="onButtonClick" />
 
     <Button
-        android:id="@+id/help_button"
+        android:id="@+id/feedback_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/layout_marginBottom"
         android:layout_marginRight="@dimen/layout_marginRight"
-        android:background="@drawable/blue_button"
+        android:background="@drawable/red_button"
         android:onClick="onButtonClick" />
 
     <Button
-        android:id="@+id/feedback_button"
+        android:id="@+id/help_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/help_button"
+        android:layout_above="@id/feedback_button"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/layout_marginBottom"
         android:layout_marginRight="@dimen/layout_marginRight"
-        android:background="@drawable/red_button"
+        android:background="@drawable/blue_button"
         android:onClick="onButtonClick" />
 
     <com.yesterdaylike.gun.Panel
@@ -59,7 +59,6 @@
             android:background="@android:color/darker_gray"
             android:gravity="top"
             android:padding="10dp"
-            android:text="@string/help"
             android:textSize="24dp" />
     </com.yesterdaylike.gun.Panel>
 

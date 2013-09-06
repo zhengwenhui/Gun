@@ -6,14 +6,24 @@
     <item name="blank" type="id"/>
 
     <string name="app_name">Guns</string>
-    <string name="help">hui\nis\nbest\none\nhaha\nbasa\n.Bounce\nInterpolator\nhui\nis\nbest\none\nhaha\nbasa\n.Bounce\nInterpolator\nhui\nis\nbest\none\nhaha\nbasa\n.Bounce\nInterpolator\nzheng\nwen\nhui\nis\nbest\none\nhaha\nbasa\n.</string>
     <string name="feedback_hint">feed back</string>
     <string name="subject">Title</string>
     <string name="select_mail_software">send</string>
     <string name="start">Start</string>
 
-
     <string-array name="gun_kind_name">
+        <item>handgun</item>
+        <item>rifles</item>
+        <item>tactical rifles</item>
+        <item>shotguns</item>
+        <item>tactical shotguns</item>
+        <item>combo guns</item>
+        <item>black powder rifles</item>
+        <item>revolvers</item>
+        <item>specialty</item>
+    </string-array>
+    
+    <string-array name="help_doc">
         <item>handgun</item>
         <item>rifles</item>
         <item>tactical rifles</item>

@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,7 +16,7 @@ import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity
 implements OnPageChangeListener, OnTouchListener{
@@ -29,7 +28,9 @@ implements OnPageChangeListener, OnTouchListener{
 	private Button mPageNumberButton;
 	private Animation mAnimation;
 
-	private Panel helpPanel;
+	private Panel mHelpPanel;
+	private TextView mHelpTextView;
+	private String[] mHelpDoc;
 	//private Panel feedBackPanel;
 
 	//private EditText messageEditText;
@@ -48,7 +49,10 @@ implements OnPageChangeListener, OnTouchListener{
 		mPageNumberButton = (Button) findViewById(R.id.page_number_button);
 		mPageNumberButton.setText( String.valueOf( mCurrentIndex+1 ) );
 
-		helpPanel = (Panel)findViewById(R.id.help_panel);
+		mHelpPanel = (Panel)findViewById(R.id.help_panel);
+		mHelpTextView = (TextView) mHelpPanel.findViewById(R.id.panelContent);
+		
+		mHelpDoc = getResources().getStringArray(R.array.help_doc);
 		//feedBackPanel = (Panel)findViewById(R.id.feedback_panel);
 
 		//messageEditText = (EditText)findViewById(R.id.message);
@@ -102,6 +106,7 @@ implements OnPageChangeListener, OnTouchListener{
 		mCurrentIndex = arg0;
 		mPageNumberButton.startAnimation(mAnimation);
 		mPageNumberButton.setText( String.valueOf( mCurrentIndex+1 ) );
+		mHelpTextView.setText(mHelpDoc[mCurrentIndex]);
 	}
 
 	public void onClick( View view ){
@@ -111,8 +116,8 @@ implements OnPageChangeListener, OnTouchListener{
 			return;
 		}*/
 
-		if(helpPanel.isOpen()){
-			helpPanel.onClick();
+		if(mHelpPanel.isOpen()){
+			mHelpPanel.onClick();
 			return;
 		}
 
@@ -133,7 +138,7 @@ implements OnPageChangeListener, OnTouchListener{
 			/*if(feedBackPanel.isOpen()){
 				feedBackPanel.onClick();
 			}*/
-			helpPanel.onClick();
+			mHelpPanel.onClick();
 			break;
 
 		case R.id.feedback_button:
@@ -175,8 +180,8 @@ implements OnPageChangeListener, OnTouchListener{
 				feedBackPanel.onClick();
 			}*/
 
-			if(helpPanel.isOpen()){
-				helpPanel.onClick();
+			if(mHelpPanel.isOpen()){
+				mHelpPanel.onClick();
 			}
 			
 			break;
@@ -195,8 +200,8 @@ implements OnPageChangeListener, OnTouchListener{
 			return;
 		}*/
 
-		if(helpPanel.isOpen()){
-			helpPanel.onClick();
+		if(mHelpPanel.isOpen()){
+			mHelpPanel.onClick();
 			return;
 		}
 		super.onBackPressed();
@@ -208,8 +213,8 @@ implements OnPageChangeListener, OnTouchListener{
 			feedBackPanel.onClick();
 		}*/
 
-		if(helpPanel.isOpen()){
-			helpPanel.onClick();
+		if(mHelpPanel.isOpen()){
+			mHelpPanel.onClick();
 		}
 		return false;
 	}
