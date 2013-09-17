@@ -141,7 +141,8 @@ implements OnPageChangeListener, OnTouchListener{
 			mHelpPanel.onClick();
 			break;
 
-		case R.id.feedback_button:
+		case R.id.start_button:
+			//¿ªÊ¼
 			onClick(null);
 			//·´À¡
 			/*if(helpPanel.isOpen()){

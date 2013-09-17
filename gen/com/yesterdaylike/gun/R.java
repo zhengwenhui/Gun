@@ -263,32 +263,28 @@ containing a value of this type.
         public static final int yellow_button_pressed=0x7f020085;
     }
     public static final class id {
-        public static final int action_settings=0x7f06001c;
-        public static final int background=0x7f060019;
+        public static final int action_settings=0x7f060018;
+        public static final int background=0x7f060015;
         public static final int blank=0x7f060007;
         public static final int bottom=0x7f060001;
-        public static final int closing_time_textview=0x7f060015;
-        public static final int difficulty_ratingbar=0x7f060011;
-        public static final int down_bar_layout=0x7f060013;
-        public static final int feedback_button=0x7f06000a;
-        public static final int fire=0x7f06001a;
-        public static final int gun=0x7f06001b;
-        public static final int gun_category=0x7f060017;
-        public static final int gun_category_name=0x7f060018;
+        public static final int fire=0x7f060016;
+        public static final int gun=0x7f060017;
+        public static final int gun_category=0x7f060013;
+        public static final int gun_category_name=0x7f060014;
         public static final int gun_viewpager=0x7f06000e;
         public static final int help_button=0x7f06000b;
         public static final int help_panel=0x7f06000c;
         public static final int left=0x7f060002;
         public static final int number=0x7f060006;
+        public static final int page_number_btn=0x7f060010;
         public static final int page_number_button=0x7f060009;
         public static final int panelContent=0x7f06000d;
         public static final int right=0x7f060003;
         public static final int sound_name=0x7f06000f;
+        public static final int start_button=0x7f06000a;
         public static final int sudoku_id_textview=0x7f060012;
         public static final int sudoku_type_viewpager=0x7f060008;
-        public static final int timer_button=0x7f060016;
-        public static final int timer_textview=0x7f060014;
-        public static final int title_bar_layout=0x7f060010;
+        public static final int title_bar_layout=0x7f060011;
         public static final int top=0x7f060000;
         public static final int values=0x7f060005;
         public static final int views=0x7f060004;
@@ -390,7 +386,8 @@ containing a value of this type.
     public static final class string {
         public static final int app_name=0x7f090000;
         public static final int feedback_hint=0x7f090001;
-        public static final int help=0x7f090005;
+        public static final int help=0x7f090006;
+        public static final int help_logo=0x7f090005;
         public static final int select_mail_software=0x7f090003;
         public static final int start=0x7f090004;
         public static final int subject=0x7f090002;

@@ -1,12 +1,10 @@
 package com.yesterdaylike.gun;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,8 +16,8 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,31 +28,33 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 	private GunViewPager mViewPager;
 	private PlayPagerAdapter mAdapter;
 	private View titleBarLayout;
-	private View downBarLayout;
-	private Panel helpPanel;
-	private RatingBar ratingBar;
+	//private View downBarLayout;
+	//private Panel helpPanel;
+	//private RatingBar ratingBar;
 	private TextView sudokuId;
 	//private TextView sound_name;
 	private View mClickView;
-
-	private TextView timerTextView;
-	private TextView closingTimeTextView;
+	private int a =1;
+	//private TextView timerTextView;
+	//private TextView closingTimeTextView;
 
 
 	private boolean mPlaying = false;
 	private List<View> mSudokuViewList;
 
-	private int recLen = 0;
+	//private int recLen = 0;
 
 	private SoundBox soundBox;
 
 	private int mTypeNo;
 	private int mCurrentIndex = 0;
+	private Button mPageNumberButton;
+	private Animation mAnimation;
 	//private int mlength = 12;
 
 	//private int soundTest = -1;
 
-	Handler handler = new Handler();
+	/*Handler handler = new Handler();
 	Runnable runnable = new Runnable() {
 		public void run() {
 			recLen++;
@@ -62,7 +62,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			timerTextView.setText("" + recLen);
 			handler.postDelayed(this, 1000);
 		}
-	};
+	};*/
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,20 +70,25 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_play);
 
+		mAnimation = AnimationUtils.loadAnimation(this, R.anim.horizontal_scale);
+
+		mPageNumberButton = (Button) findViewById(R.id.page_number_btn);
+		mPageNumberButton.setText( String.valueOf( mCurrentIndex+1 ) );
+
 		mTypeNo = getIntent().getIntExtra(MainActivity.TYPE_NO, -1);
 		Log.i(MainActivity.TYPE_NO, ""+mTypeNo);
 
 		soundBox = new SoundBox(this);
 
 		titleBarLayout = findViewById(R.id.title_bar_layout);
-		downBarLayout = findViewById(R.id.down_bar_layout);
-		helpPanel = (Panel)findViewById(R.id.help_panel);
-		ratingBar = (RatingBar)findViewById(R.id.difficulty_ratingbar);
+		//downBarLayout = findViewById(R.id.down_bar_layout);
+		//helpPanel = (Panel)findViewById(R.id.help_panel);
+		//ratingBar = (RatingBar)findViewById(R.id.difficulty_ratingbar);
 		sudokuId = (TextView)findViewById(R.id.sudoku_id_textview);
 		//sound_name = (TextView)findViewById(R.id.sound_name);
 
-		timerTextView = (TextView)findViewById(R.id.timer_textview);
-		closingTimeTextView = (TextView)findViewById(R.id.closing_time_textview);
+		//timerTextView = (TextView)findViewById(R.id.timer_textview);
+		//closingTimeTextView = (TextView)findViewById(R.id.closing_time_textview);
 
 		mSudokuViewList = new ArrayList<View>();
 		//mSquareViewList = new ArrayList<TextView[]>();
@@ -129,17 +134,17 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		if(helpPanel.isOpen()){
+		/*if(helpPanel.isOpen()){
 			helpPanel.onClick();
 			return;
-		}
+		}*/
 
 		if(mPlaying){
 			mPlaying = false;
 			hideSystemUi(mPlaying);
 			mViewPager.setPlaying(mPlaying);
-			handler.removeCallbacks(runnable);
-			closingTimeTextView.setText(Calendar.getInstance().getTime().toString());
+			//handler.removeCallbacks(runnable);
+			//closingTimeTextView.setText(Calendar.getInstance().getTime().toString());
 			return;
 		}
 		super.onBackPressed();
@@ -156,6 +161,8 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 	public void onPageSelected(int arg0) {
 		// TODO Auto-generated method stub
 		mCurrentIndex = arg0;
+		mPageNumberButton.startAnimation(mAnimation);
+		mPageNumberButton.setText( String.valueOf( mCurrentIndex+1 ) );
 		//sound_name.setText(SoundBox.soundNames[++soundTest]);
 		//float rating = mSudokus[arg0].degreeOfDifficulty;
 		//ratingBar.setRating( rating );
@@ -163,8 +170,8 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		//mSquaresViews = mSquareViewList.get( arg0 % mSquareViewList.size() );
 		//mData = mSudokus[arg0].data;
 
-		timerTextView.setText("");
-		closingTimeTextView.setText("");
+		//timerTextView.setText("");
+		//closingTimeTextView.setText("");
 	}
 
 	public void onClick( View view ){
@@ -172,7 +179,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 
 		switch (view.getId()) {
 
-		case R.id.timer_button:
+		/*case R.id.timer_button:
 			//开始计时
 			mPlaying = true;
 			hideSystemUi(mPlaying);
@@ -183,6 +190,23 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 
 		case R.id.help_button:
 			helpPanel.onClick();
+			break;*/
+
+		case R.id.page_number_btn:
+			if( mCurrentIndex == 0 ){
+				a = 1;
+			}
+			else if( (mCurrentIndex+1) == mAdapter.getCount() ){
+				a = -1;
+			}
+			mViewPager.setCurrentItem( mCurrentIndex+a, false);
+			//mViewPager.setCurrentItem(item, smoothScroll);
+			break;
+
+		case R.id.start_button:
+			mPlaying = true;
+			hideSystemUi(mPlaying);
+			mViewPager.setPlaying(mPlaying);
 			break;
 
 		case R.id.gun:
@@ -236,22 +260,22 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		Window window = getWindow();
 		if (hide) {
 			titleBarLayout.setVisibility(View.GONE);
-			downBarLayout.setVisibility(View.GONE);
+			//downBarLayout.setVisibility(View.GONE);
 			window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 					WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		} else {
 			window.setFlags(0, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 			titleBarLayout.setVisibility(View.VISIBLE);
-			downBarLayout.setVisibility(View.VISIBLE);
+			//downBarLayout.setVisibility(View.VISIBLE);
 		}
 	}
 
 	public boolean onTouch(View v, MotionEvent event) {
 		// TODO Auto-generated method stub
-		if(helpPanel.isOpen()){
+		/*if(helpPanel.isOpen()){
 			helpPanel.onClick();
 			return true;
-		}
+		}*/
 
 		if( mPlaying ){
 			//不允许viewpager滑动
