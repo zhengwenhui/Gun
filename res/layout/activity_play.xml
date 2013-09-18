@@ -9,11 +9,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <TextView
+    <!-- <TextView
         android:id="@+id/sound_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textIsSelectable="true" />
+        android:textIsSelectable="true" /> -->
 
     <Button
         android:id="@+id/page_number_btn"
@@ -38,15 +38,15 @@
         android:background="@drawable/red_button"
         android:onClick="onClick" />
 
+    <!--
     <RelativeLayout
         android:id="@+id/title_bar_layout"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/toolbar_height"
         android:layout_alignParentTop="true"
         android:background="@drawable/actionbar_shadow" >
-
-        <!--
-             <RatingBar
+        
+        <RatingBar
             android:id="@+id/difficulty_ratingbar"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
@@ -57,8 +57,7 @@
             android:numStars="5"
             android:rating="3.5"
             android:stepSize="0.5" />
-        -->
-
+        
         <TextView
             android:id="@+id/sudoku_id_textview"
             android:layout_width="wrap_content"
@@ -69,8 +68,7 @@
             android:textColor="@color/holo_blue_dark"
             android:textSize="24dp" />
 
-        <!--
-             <Button
+        <Button
             android:id="@+id/help_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,10 +76,9 @@
             android:layout_marginRight="@dimen/layout_marginRight"
             android:background="@drawable/ic_menu_help_holo_light"
             android:onClick="onClick" />
-        -->
+        
     </RelativeLayout>
-
-    <!--
+    
     <RelativeLayout
         android:id="@+id/down_bar_layout"
         android:layout_width="fill_parent"
@@ -115,10 +112,7 @@
             android:onClick="onClick"
             android:text="@string/start" />
     </RelativeLayout>
-    -->
 
-
-    <!--
     <com.yesterdaylike.gun.Panel
         android:id="@+id/help_panel"
         android:layout_width="fill_parent"

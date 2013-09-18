@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 
 public class GunViewPager extends ViewPager{
 
-	private boolean palying = false;
+	//private boolean palying = false;
 
 	public GunViewPager(Context context) {
 		super(context);
@@ -20,16 +20,16 @@ public class GunViewPager extends ViewPager{
 	}
 
 	public void setPlaying( boolean palying ){
-		this.palying = palying;
+		//this.palying = palying;
 	}
 
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent event) {
 		// TODO Auto-generated method stub
 		int action = event.getAction();
-		if( palying && action == MotionEvent.ACTION_MOVE ){
+		/*if( palying && action == MotionEvent.ACTION_MOVE ){
 			return false;
-		}
+		}*/
 		return super.onInterceptTouchEvent(event);
 	}
 }

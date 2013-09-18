@@ -11,14 +11,11 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yesterdaylike.gun.PlayPagerAdapter.OnInstantiateItemListener;
@@ -27,22 +24,8 @@ public class PlayActivity extends Activity
 implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 	private GunViewPager mViewPager;
 	private PlayPagerAdapter mAdapter;
-	private View titleBarLayout;
-	//private View downBarLayout;
-	//private Panel helpPanel;
-	//private RatingBar ratingBar;
-	private TextView sudokuId;
-	//private TextView sound_name;
-	private View mClickView;
 	private int a =1;
-	//private TextView timerTextView;
-	//private TextView closingTimeTextView;
-
-
-	private boolean mPlaying = false;
-	private List<View> mSudokuViewList;
-
-	//private int recLen = 0;
+	private List<View> mViewList;
 
 	private SoundBox soundBox;
 
@@ -50,19 +33,6 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 	private int mCurrentIndex = 0;
 	private Button mPageNumberButton;
 	private Animation mAnimation;
-	//private int mlength = 12;
-
-	//private int soundTest = -1;
-
-	/*Handler handler = new Handler();
-	Runnable runnable = new Runnable() {
-		public void run() {
-			recLen++;
-			//txtView.setText("" + recLen);
-			timerTextView.setText("" + recLen);
-			handler.postDelayed(this, 1000);
-		}
-	};*/
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,19 +49,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		Log.i(MainActivity.TYPE_NO, ""+mTypeNo);
 
 		soundBox = new SoundBox(this);
-
-		titleBarLayout = findViewById(R.id.title_bar_layout);
-		//downBarLayout = findViewById(R.id.down_bar_layout);
-		//helpPanel = (Panel)findViewById(R.id.help_panel);
-		//ratingBar = (RatingBar)findViewById(R.id.difficulty_ratingbar);
-		sudokuId = (TextView)findViewById(R.id.sudoku_id_textview);
-		//sound_name = (TextView)findViewById(R.id.sound_name);
-
-		//timerTextView = (TextView)findViewById(R.id.timer_textview);
-		//closingTimeTextView = (TextView)findViewById(R.id.closing_time_textview);
-
-		mSudokuViewList = new ArrayList<View>();
-		//mSquareViewList = new ArrayList<TextView[]>();
+		mViewList = new ArrayList<View>();
 
 		LayoutInflater layoutInflater = getLayoutInflater();
 
@@ -103,11 +61,11 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			item.gun = (ImageButton)view.findViewById(R.id.gun);
 			item.gun.setTag(item);
 			view.setTag(item);
-			mSudokuViewList.add( view );
+			mViewList.add( view );
 		}
 
 		mViewPager = (GunViewPager)findViewById(R.id.gun_viewpager);
-		mAdapter = new PlayPagerAdapter( soundBox,mSudokuViewList,mTypeNo);
+		mAdapter = new PlayPagerAdapter( soundBox,mViewList,mTypeNo);
 		mAdapter.setOnInstantiateItemListener(this);
 		mViewPager.setAdapter(mAdapter);
 		mViewPager.setOnPageChangeListener(this);
@@ -131,24 +89,24 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		super.onResume();
 	}
 
-	@Override
+	/*@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		/*if(helpPanel.isOpen()){
+		if(helpPanel.isOpen()){
 			helpPanel.onClick();
 			return;
-		}*/
+		}
 
 		if(mPlaying){
 			mPlaying = false;
-			hideSystemUi(mPlaying);
+			//hideSystemUi(mPlaying);
 			mViewPager.setPlaying(mPlaying);
 			//handler.removeCallbacks(runnable);
 			//closingTimeTextView.setText(Calendar.getInstance().getTime().toString());
 			return;
 		}
 		super.onBackPressed();
-	}
+	}*/
 
 	public void onPageScrollStateChanged(int arg0) {
 		// TODO Auto-generated method stub
@@ -204,46 +162,15 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			break;
 
 		case R.id.start_button:
-			mPlaying = true;
-			hideSystemUi(mPlaying);
-			mViewPager.setPlaying(mPlaying);
+			View viewCur = mViewList.get(mViewPager.getCurrentItem());
+			final Item item = (Item)viewCur.getTag();
+			shoot(item);
 			break;
 
 		case R.id.gun:
-			if(mPlaying){
-				//boolean blank = (Boolean) view.getTag(R.id.blank);
-				final Item item = (Item)view.getTag();
-
-				Animation shakeAnim = AnimationUtils.loadAnimation(this, R.anim.shake_y);
-				Animation fireAnim = AnimationUtils.loadAnimation(this, R.anim.fire);
-				Animation gunAnim = AnimationUtils.loadAnimation(this, R.anim.gun);
-				fireAnim.setAnimationListener(new AnimationListener() {
-
-					public void onAnimationStart(Animation animation) {
-						// TODO Auto-generated method stub
-						item.fire.setVisibility(View.VISIBLE);
-					}
-
-					public void onAnimationRepeat(Animation animation) {
-						// TODO Auto-generated method stub
-
-					}
-
-					public void onAnimationEnd(Animation animation) {
-						// TODO Auto-generated method stub
-						item.fire.setVisibility(View.INVISIBLE);
-					}
-				});
-
-				item.fire.startAnimation(fireAnim);
-				item.background.startAnimation(shakeAnim);
-				item.gun.startAnimation(gunAnim);
-				soundBox.playSoundPool(item.sound);
-
-			}
-			else{
-				Toast.makeText(this, "点击左下角按钮开始", Toast.LENGTH_SHORT).show();
-			}
+			//boolean blank = (Boolean) view.getTag(R.id.blank);
+			final Item itemGun = (Item)view.getTag();
+			shoot(itemGun);
 			break;
 
 		default:
@@ -251,12 +178,40 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			break;
 		}
 	}
+	
+	private void shoot(final Item item){
+		Animation shakeAnim = AnimationUtils.loadAnimation(this, R.anim.shake_y);
+		Animation fireAnim = AnimationUtils.loadAnimation(this, R.anim.fire);
+		Animation gunAnim = AnimationUtils.loadAnimation(this, R.anim.gun);
+		fireAnim.setAnimationListener(new AnimationListener() {
+
+			public void onAnimationStart(Animation animation) {
+				// TODO Auto-generated method stub
+				item.fire.setVisibility(View.VISIBLE);
+			}
+
+			public void onAnimationRepeat(Animation animation) {
+				// TODO Auto-generated method stub
+
+			}
+
+			public void onAnimationEnd(Animation animation) {
+				// TODO Auto-generated method stub
+				item.fire.setVisibility(View.INVISIBLE);
+			}
+		});
+
+		item.fire.startAnimation(fireAnim);
+		item.background.startAnimation(shakeAnim);
+		item.gun.startAnimation(gunAnim);
+		soundBox.playSoundPool(item.sound);
+	}
 
 	/**
 	 * 是否隐藏状态栏和标题栏（即是否全屏）。
 	 * @param hide
 	 */
-	private void hideSystemUi(boolean hide) {
+	/*private void hideSystemUi(boolean hide) {
 		Window window = getWindow();
 		if (hide) {
 			titleBarLayout.setVisibility(View.GONE);
@@ -268,23 +223,29 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			titleBarLayout.setVisibility(View.VISIBLE);
 			//downBarLayout.setVisibility(View.VISIBLE);
 		}
-	}
+	}*/
 
-	public boolean onTouch(View v, MotionEvent event) {
+	/*public boolean onTouch(View v, MotionEvent event) {
 		// TODO Auto-generated method stub
-		/*if(helpPanel.isOpen()){
+		if(helpPanel.isOpen()){
 			helpPanel.onClick();
 			return true;
-		}*/
+		}
 
 		if( mPlaying ){
 			//不允许viewpager滑动
 			return true;
 		}
 		return false;
-	}
+	}*/
 
 	public boolean OnInstantiateItem(int index, int position) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
 		// TODO Auto-generated method stub
 		return false;
 	}
