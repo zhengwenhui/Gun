@@ -32,7 +32,7 @@
         android:background="@drawable/red_button"
         android:onClick="onButtonClick" />
 
-    <Button
+<!--     <Button
         android:id="@+id/help_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         android:background="@drawable/blue_button"
         android:onClick="onButtonClick"
         android:textSize="24dp" 
-        android:text="@string/help_logo"/>
+        android:text="@string/help_logo"/> -->
 
     <com.yesterdaylike.gun.Panel
         android:id="@+id/help_panel"

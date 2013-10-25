@@ -19,6 +19,11 @@
         android:layout_alignParentBottom="true"
         android:paddingBottom="2dp"
         android:paddingLeft="10dp"
+        android:shadowColor="@android:color/darker_gray"
+        android:shadowRadius="3"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:textSize="48sp"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

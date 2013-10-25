@@ -162,7 +162,7 @@ public class SoundBox{
 		"xm8_fire",
 	};
 
-	public int[] soundRes = {
+	public static int[] soundRes = {
 			R.raw.aa12_fire,
 			R.raw.ak47_fire,
 			R.raw.ak74_fire,

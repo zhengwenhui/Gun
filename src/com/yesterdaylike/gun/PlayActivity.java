@@ -25,6 +25,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 	private GunViewPager mViewPager;
 	private PlayPagerAdapter mAdapter;
 	private int a =1;
+	private int soundIndex = 0;
 	private List<View> mViewList;
 
 	private SoundBox soundBox;
@@ -133,7 +134,6 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 	}
 
 	public void onClick( View view ){
-		Toast.makeText(this, "onClick", Toast.LENGTH_SHORT).show();
 
 		switch (view.getId()) {
 
@@ -162,7 +162,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			break;
 
 		case R.id.start_button:
-			View viewCur = mViewList.get(mViewPager.getCurrentItem());
+			View viewCur = mViewList.get(mViewPager.getCurrentItem()%mViewList.size());
 			final Item item = (Item)viewCur.getTag();
 			shoot(item);
 			break;
@@ -204,7 +204,12 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		item.fire.startAnimation(fireAnim);
 		item.background.startAnimation(shakeAnim);
 		item.gun.startAnimation(gunAnim);
-		soundBox.playSoundPool(item.sound);
+		//soundBox.playSoundPool(item.sound);
+		if(soundIndex>=SoundBox.soundRes.length){
+			soundIndex=0;
+		}
+		Toast.makeText(this, ""+soundIndex, Toast.LENGTH_SHORT).show();
+		soundBox.playSoundPool(SoundBox.soundRes[soundIndex++]);
 	}
 
 	/**

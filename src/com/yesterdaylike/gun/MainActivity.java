@@ -133,13 +133,13 @@ implements OnPageChangeListener, OnTouchListener{
 			mViewPager.setCurrentItem( (mCurrentIndex + 1) % mAdapter.getCount() );
 			break;
 
-		case R.id.help_button:
+/*		case R.id.help_button:
 			//°ïÖú
 			/*if(feedBackPanel.isOpen()){
 				feedBackPanel.onClick();
-			}*/
+			}
 			mHelpPanel.onClick();
-			break;
+			break;*/
 
 		case R.id.start_button:
 			//¿ªÊ¼
