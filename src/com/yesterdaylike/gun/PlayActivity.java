@@ -3,6 +3,10 @@ package com.yesterdaylike.gun;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.youmi.android.banner.AdSize;
+import net.youmi.android.banner.AdView;
+import net.youmi.android.diy.banner.DiyAdSize;
+import net.youmi.android.diy.banner.DiyBanner;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -16,7 +20,8 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.yesterdaylike.gun.PlayPagerAdapter.OnInstantiateItemListener;
 
@@ -25,7 +30,6 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 	private GunViewPager mViewPager;
 	private PlayPagerAdapter mAdapter;
 	private int a =1;
-	private int soundIndex = 0;
 	private List<View> mViewList;
 
 	private SoundBox soundBox;
@@ -72,6 +76,31 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		mViewPager.setOnPageChangeListener(this);
 		mViewPager.setOnTouchListener(this);
 		onPageSelected( 0 );
+		
+		//获取要嵌入迷你广告条的布局
+	    RelativeLayout miniBannerLayout=(RelativeLayout)findViewById(R.id.miniBannerLayout);
+	    //demo 1 迷你Banner : 宽满屏，高32dp
+	    //DiyBanner banner = new DiyBanner(this, DiyAdSize.SIZE_MATCH_SCREENx32);//传入高度为32dp的AdSize来定义迷你Banner    
+	    //demo 2 迷你Banner : 宽320dp，高32dp
+	    DiyBanner banner = new DiyBanner(this, DiyAdSize.SIZE_320x32);//传入高度为32dp的AdSize来定义迷你Banner 
+	    //将积分Banner加入到布局中
+	    miniBannerLayout.addView(banner);
+	    
+		//获取要嵌入迷你广告条的布局
+	    RelativeLayout miniBanner2Layout=(RelativeLayout)findViewById(R.id.miniBanner2Layout);
+	    //demo 1 迷你Banner : 宽满屏，高32dp
+	    //DiyBanner banner = new DiyBanner(this, DiyAdSize.SIZE_MATCH_SCREENx32);//传入高度为32dp的AdSize来定义迷你Banner    
+	    //demo 2 迷你Banner : 宽320dp，高32dp
+	    DiyBanner banner2 = new DiyBanner(this, DiyAdSize.SIZE_320x32);//传入高度为32dp的AdSize来定义迷你Banner 
+	    //将积分Banner加入到布局中
+	    miniBanner2Layout.addView(banner2);
+		
+		//实例化广告条
+	    AdView adView = new AdView(this, AdSize.SIZE_320x50);
+	    //获取要嵌入广告条的布局
+	    LinearLayout adLayout2=(LinearLayout)findViewById(R.id.adLayout);
+	    //将广告条加入到布局中
+	    adLayout2.addView(adView);
 	}
 
 	public class Item{
@@ -166,6 +195,10 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			final Item item = (Item)viewCur.getTag();
 			shoot(item);
 			break;
+			
+		case R.id.back_button:
+			this.finish();
+			break;
 
 		case R.id.gun:
 			//boolean blank = (Boolean) view.getTag(R.id.blank);
@@ -204,12 +237,12 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		item.fire.startAnimation(fireAnim);
 		item.background.startAnimation(shakeAnim);
 		item.gun.startAnimation(gunAnim);
-		//soundBox.playSoundPool(item.sound);
-		if(soundIndex>=SoundBox.soundRes.length){
+		soundBox.playSoundPool(item.sound);
+		/*if(soundIndex>=SoundBox.soundRes.length){
 			soundIndex=0;
 		}
 		Toast.makeText(this, ""+soundIndex, Toast.LENGTH_SHORT).show();
-		soundBox.playSoundPool(SoundBox.soundRes[soundIndex++]);
+		soundBox.playSoundPool(SoundBox.soundRes[soundIndex++]);*/
 	}
 
 	/**

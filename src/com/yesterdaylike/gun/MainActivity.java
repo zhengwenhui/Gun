@@ -3,6 +3,7 @@ package com.yesterdaylike.gun;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.youmi.android.AdManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -52,7 +53,7 @@ implements OnPageChangeListener, OnTouchListener{
 		mHelpPanel = (Panel)findViewById(R.id.help_panel);
 		mHelpTextView = (TextView) mHelpPanel.findViewById(R.id.panelContent);
 		
-		mHelpDoc = getResources().getStringArray(R.array.help_doc);
+		mHelpDoc = getResources().getStringArray(R.array.gun_kind_name);
 		//feedBackPanel = (Panel)findViewById(R.id.feedback_panel);
 
 		//messageEditText = (EditText)findViewById(R.id.message);
@@ -90,6 +91,10 @@ implements OnPageChangeListener, OnTouchListener{
 		mViewPager.setOnPageChangeListener(this);
 		mViewPager.setOnTouchListener(this);
 		onPageSelected( mCurrentIndex );
+		
+		AdManager.getInstance(this).init("e7e50267ae23cb07","0ab58313c2d0be60", false); 
+		//SmartBannerManager.init(this);
+		//SmartBannerManager.show(this);
 	}
 
 	public void onPageScrollStateChanged(int arg0) {
@@ -150,7 +155,9 @@ implements OnPageChangeListener, OnTouchListener{
 			}
 			feedBackPanel.onClick();*/
 			break;
-
+		case R.id.back_button:
+			this.finish();
+			break;
 		/*case R.id.feedback_send:
 			//·¢ËÍ·´À¡
 			String message = messageEditText.getText().toString();

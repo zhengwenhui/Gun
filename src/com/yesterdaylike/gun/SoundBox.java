@@ -29,7 +29,7 @@ public class SoundBox{
 		mContext = context;
 		getOpenSound();
 		//指定声音池的最大音频流数目为10，声音品质为5
-		mSoundPool = new SoundPool(soundRes.length , AudioManager.STREAM_SYSTEM, 5);  
+		mSoundPool = new SoundPool(10 , AudioManager.STREAM_SYSTEM, 5);  
 		//载入音频流，返回在池中的id
 		loadSoundMap = new HashMap<Integer, Integer>();
 
@@ -38,6 +38,8 @@ public class SoundBox{
 		int max = mAudioManager.getStreamMaxVolume( AudioManager.STREAM_MUSIC );
 		int current = mAudioManager.getStreamVolume( AudioManager.STREAM_MUSIC );
 		mVolume = current/Float.valueOf(max);
+
+		loadInitSound();
 	}
 
 	public boolean getOpenSound(){
@@ -67,6 +69,35 @@ public class SoundBox{
 		}
 	}
 
+	private void loadInitSound(){
+		int [] initSoundResId = {
+				R.raw.deagle_fire,
+				R.raw.r700_fire,
+				R.raw.scout_fire,
+				R.raw.sg550_fire,
+				R.raw.aug_fire,
+				R.raw.fs2000_fire,
+				R.raw.mk23_fire,
+				R.raw.ak47_fire,
+				R.raw.barrettm82a1c_fire,
+				R.raw.beretta96_fire,
+				R.raw.sg552_fire,
+				R.raw.browning_takedown_fire,
+				R.raw.m4a1_fire,
+				R.raw.w1200_fire,
+				R.raw.aa12_fire,
+				R.raw.awp_fire,
+				R.raw.mp5_navy_fire,
+		};
+		int value;
+		for (int resId : initSoundResId) {
+			if (!loadSoundMap.containsKey(resId)){
+				value = mSoundPool.load(mContext, resId, 0);
+				loadSoundMap.put(resId, value);
+			}
+		}
+	}
+
 
 	public void loadSoundPool(int resId){
 		int value;
@@ -76,7 +107,7 @@ public class SoundBox{
 		}
 	}
 
-	public static String[] soundNames = {
+	/*public static String[] soundNames = {
 		"aa12_fire",
 		"ak47_fire",
 		"ak74_fire",
@@ -246,6 +277,6 @@ public class SoundBox{
 			R.raw.usp_fire,
 			R.raw.w1200_fire,
 			R.raw.xm8_fire,
-	};
+	};*/
 }
 

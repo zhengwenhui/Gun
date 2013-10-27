@@ -37,6 +37,41 @@
         android:background="@drawable/red_button"
         android:onClick="onClick" />
 
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/layout_marginBottom"
+        android:layout_marginRight="@dimen/layout_marginRight"
+        android:background="@drawable/blue_button"
+        android:onClick="onClick" />
+
+    <RelativeLayout
+        android:id="@+id/miniBannerLayout"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/miniBanner2Layout"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/adLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal" >
+    </LinearLayout>
+
     <!--
     <RelativeLayout
         android:id="@+id/title_bar_layout"

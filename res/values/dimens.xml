@@ -5,9 +5,9 @@
 
     <dimen name="margin_interval">7dp</dimen>
     
-    <dimen name="layout_marginRight">20dp</dimen>
-    <dimen name="layout_marginTop">40dp</dimen>
-    <dimen name="layout_marginBottom">40dp</dimen>
+    <dimen name="layout_marginRight">15dp</dimen>
+    <dimen name="layout_marginTop">30dp</dimen>
+    <dimen name="layout_marginBottom">30dp</dimen>
     
     <dimen name="paddingLeft">15dp</dimen>
     <dimen name="square_size">55dp</dimen>

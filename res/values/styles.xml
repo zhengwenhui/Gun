@@ -19,6 +19,13 @@
         <item name="android:onClick">onClick</item>
     </style>
 
+    <style name="Transparent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
     <style name="square_dialog_style">
         <item name="android:layout_width">@dimen/square_size</item>
         <item name="android:layout_height">@dimen/square_size</item>

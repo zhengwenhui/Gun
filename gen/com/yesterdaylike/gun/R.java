@@ -107,11 +107,6 @@ containing a value of this type.
         public static final int purple=0x7f07000a;
     }
     public static final class dimen {
-        /** 
-         Customize dimensions originally defined in res/values/dimens.xml (such as
-         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
-    
-         */
         public static final int activity_horizontal_margin=0x7f08000c;
         public static final int layout_marginBottom=0x7f080006;
         public static final int layout_marginRight=0x7f080004;
@@ -263,23 +258,27 @@ containing a value of this type.
         public static final int yellow_button_pressed=0x7f020085;
     }
     public static final class id {
-        public static final int action_settings=0x7f060015;
-        public static final int background=0x7f060012;
+        public static final int action_settings=0x7f060019;
+        public static final int adLayout=0x7f060013;
+        public static final int back_button=0x7f06000b;
+        public static final int background=0x7f060016;
         public static final int blank=0x7f060007;
         public static final int bottom=0x7f060001;
-        public static final int fire=0x7f060013;
-        public static final int gun=0x7f060014;
-        public static final int gun_category=0x7f060010;
-        public static final int gun_category_name=0x7f060011;
-        public static final int gun_viewpager=0x7f06000d;
-        public static final int help_panel=0x7f06000b;
+        public static final int fire=0x7f060017;
+        public static final int gun=0x7f060018;
+        public static final int gun_category=0x7f060014;
+        public static final int gun_category_name=0x7f060015;
+        public static final int gun_viewpager=0x7f06000e;
+        public static final int help_panel=0x7f06000c;
         public static final int left=0x7f060002;
+        public static final int miniBanner2Layout=0x7f060012;
+        public static final int miniBannerLayout=0x7f060011;
         public static final int number=0x7f060006;
-        public static final int page_number_btn=0x7f06000f;
+        public static final int page_number_btn=0x7f060010;
         public static final int page_number_button=0x7f060009;
-        public static final int panelContent=0x7f06000c;
+        public static final int panelContent=0x7f06000d;
         public static final int right=0x7f060003;
-        public static final int sound_name=0x7f06000e;
+        public static final int sound_name=0x7f06000f;
         public static final int start_button=0x7f06000a;
         public static final int sudoku_type_viewpager=0x7f060008;
         public static final int top=0x7f060000;
@@ -383,8 +382,6 @@ containing a value of this type.
     public static final class string {
         public static final int app_name=0x7f090000;
         public static final int feedback_hint=0x7f090001;
-        public static final int help=0x7f090006;
-        public static final int help_logo=0x7f090005;
         public static final int select_mail_software=0x7f090003;
         public static final int start=0x7f090004;
         public static final int subject=0x7f090002;
@@ -402,12 +399,13 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0b0006;
+        public static final int AppBaseTheme=0x7f0b0007;
         public static final int AppTheme=0x7f0b0000;
-        public static final int square_dialog_style=0x7f0b0003;
-        public static final int square_dialog_style2=0x7f0b0005;
+        public static final int Transparent=0x7f0b0003;
+        public static final int square_dialog_style=0x7f0b0004;
+        public static final int square_dialog_style2=0x7f0b0006;
         public static final int square_style=0x7f0b0002;
-        public static final int square_style2=0x7f0b0004;
+        public static final int square_style2=0x7f0b0005;
         public static final int transparent_dialog=0x7f0b0001;
     }
     public static final class styleable {
@@ -446,7 +444,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.yesterdaylike.gun:animationDuration
+          @attr name android:animationDuration
         */
         public static final int Panel_animationDuration = 0;
         /**
@@ -458,7 +456,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.yesterdaylike.gun:content
+          @attr name android:content
         */
         public static final int Panel_content = 2;
         /**
@@ -474,7 +472,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.yesterdaylike.gun:linearFlying
+          @attr name android:linearFlying
         */
         public static final int Panel_linearFlying = 3;
         /**
@@ -495,7 +493,7 @@ containing a value of this type.
 <tr><td><code>right</code></td><td>3</td><td> Panel placed at right of the screen. </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.yesterdaylike.gun:position
+          @attr name android:position
         */
         public static final int Panel_position = 1;
         /**
@@ -513,7 +511,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.yesterdaylike.gun:weight
+          @attr name android:weight
         */
         public static final int Panel_weight = 4;
     };

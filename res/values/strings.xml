@@ -34,7 +34,4 @@
         <item>revolvers</item>
         <item>specialty</item>
     </string-array>
-    
-    <string name="help_logo">"\?"</string>
-
 </resources>
