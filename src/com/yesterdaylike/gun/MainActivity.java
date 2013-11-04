@@ -3,9 +3,13 @@ package com.yesterdaylike.gun;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.cocos2d.layers.CCScene;
+import org.cocos2d.nodes.CCDirector;
+import org.cocos2d.opengl.CCGLSurfaceView;
 import net.youmi.android.AdManager;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v4.view.ViewPager;
@@ -17,6 +21,7 @@ import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends Activity
@@ -95,6 +100,27 @@ implements OnPageChangeListener, OnTouchListener{
 		AdManager.getInstance(this).init("e7e50267ae23cb07","0ab58313c2d0be60", false); 
 		//SmartBannerManager.init(this);
 		//SmartBannerManager.show(this);
+		addLight();
+	}
+	
+	private void addLight(){
+		RelativeLayout lightView = (RelativeLayout) findViewById(R.id.light_layout);
+		
+		CCGLSurfaceView view = new CCGLSurfaceView(this); 
+		view.setBackgroundColor(Color.TRANSPARENT);
+		lightView.addView(view);
+		
+		CCDirector director = CCDirector.sharedDirector();
+		director.attachInView(view);
+		director.setDisplayFPS(true);
+		director.setAnimationInterval(1/30.0);
+		
+
+		CCScene scene = CCScene.node();
+		
+		GameLayer gameLayer = new GameLayer(this);
+		scene.addChild(gameLayer);
+		director.runWithScene(scene);
 	}
 
 	public void onPageScrollStateChanged(int arg0) {

@@ -9,10 +9,10 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 
-    <View
+    <!-- <View
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@drawable/fuzzy" />
+        android:background="@drawable/fuzzy" /> -->
 
     <View
         android:id="@+id/fire"
@@ -27,6 +27,7 @@
         android:layout_height="fill_parent"
         android:background="@android:color/transparent"
         android:onClick="onClick"
+        android:padding="20dp"
         android:scaleType="fitCenter" />
 
 </RelativeLayout>

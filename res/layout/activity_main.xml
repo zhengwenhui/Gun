@@ -9,6 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <RelativeLayout
+        android:id="@+id/light_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:background="@android:color/transparent"/>
+
     <Button
         android:id="@+id/page_number_button"
         android:layout_width="wrap_content"
@@ -44,7 +50,7 @@
         android:onClick="onButtonClick" />
 
     <!--
-         <Button
+	<Button
         android:id="@+id/help_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,8 +60,7 @@
         android:layout_marginRight="@dimen/layout_marginRight"
         android:background="@drawable/blue_button"
         android:onClick="onButtonClick"
-        android:textSize="24dp" >
-        -->
+        android:textSize="24dp" >    -->
 
     <com.yesterdaylike.gun.Panel
         android:id="@+id/help_panel"
