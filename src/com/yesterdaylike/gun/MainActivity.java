@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,7 +27,7 @@ implements OnPageChangeListener, OnTouchListener{
 	private MainPagerAdapter mAdapter;
 	private List<View> mViewsList;
 	private int mCurrentIndex = 0;
-	private Button mPageNumberButton;
+	private ImageButton mPageNumberButton;
 	private Animation mAnimation;
 
 	private Panel mHelpPanel;
@@ -48,8 +48,8 @@ implements OnPageChangeListener, OnTouchListener{
 
 		mAnimation = AnimationUtils.loadAnimation(this, R.anim.horizontal_scale);
 
-		mPageNumberButton = (Button) findViewById(R.id.page_number_button);
-		mPageNumberButton.setText( String.valueOf( mCurrentIndex+1 ) );
+		mPageNumberButton = (ImageButton) findViewById(R.id.page_number_button);
+		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
 
 		mHelpPanel = (Panel)findViewById(R.id.help_panel);
 		mHelpTextView = (TextView) mHelpPanel.findViewById(R.id.panelContent);
@@ -135,7 +135,7 @@ implements OnPageChangeListener, OnTouchListener{
 		// TODO Auto-generated method stub
 		mCurrentIndex = arg0;
 		mPageNumberButton.startAnimation(mAnimation);
-		mPageNumberButton.setText( String.valueOf( mCurrentIndex+1 ) );
+		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
 		mHelpTextView.setText(mHelpDoc[mCurrentIndex]);
 	}
 

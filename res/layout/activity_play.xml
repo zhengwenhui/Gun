@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textIsSelectable="true" />
 
-    <Button
+    <ImageButton
         android:id="@+id/page_number_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,8 +23,7 @@
         android:layout_marginRight="@dimen/layout_marginRight"
         android:layout_marginTop="@dimen/layout_marginTop"
         android:background="@drawable/yellow_button"
-        android:onClick="onClick"
-        android:textSize="24dp" />
+        android:onClick="onClick" />
 
     <Button
         android:id="@+id/start_button"
@@ -44,7 +43,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="@dimen/layout_marginBottom"
-        android:layout_marginRight="@dimen/layout_marginRight"
+        android:layout_marginLeft="@dimen/layout_marginRight"
         android:background="@drawable/blue_button"
         android:onClick="onClick" />
 

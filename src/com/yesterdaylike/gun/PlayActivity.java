@@ -18,7 +18,6 @@ import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -36,7 +35,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 
 	private int mTypeNo;
 	private int mCurrentIndex = 0;
-	private Button mPageNumberButton;
+	private ImageButton mPageNumberButton;
 	private Animation mAnimation;
 
 	@Override
@@ -47,8 +46,8 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 
 		mAnimation = AnimationUtils.loadAnimation(this, R.anim.horizontal_scale);
 
-		mPageNumberButton = (Button) findViewById(R.id.page_number_btn);
-		mPageNumberButton.setText( String.valueOf( mCurrentIndex+1 ) );
+		mPageNumberButton = (ImageButton) findViewById(R.id.page_number_btn);
+		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
 
 		mTypeNo = getIntent().getIntExtra(MainActivity.TYPE_NO, -1);
 		Log.i(MainActivity.TYPE_NO, ""+mTypeNo);
@@ -153,7 +152,8 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		Log.i("onPageScrollStateChanged", "arg0:"+arg0);
 		mCurrentIndex = arg0;
 		mPageNumberButton.startAnimation(mAnimation);
-		mPageNumberButton.setText( String.valueOf( mCurrentIndex+1 ) );
+		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
+
 		//sound_name.setText(SoundBox.soundNames[++soundTest]);
 		//float rating = mSudokus[arg0].degreeOfDifficulty;
 		//ratingBar.setRating( rating );
