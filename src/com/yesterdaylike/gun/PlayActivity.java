@@ -140,14 +140,17 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 
 	public void onPageScrollStateChanged(int arg0) {
 		// TODO Auto-generated method stub
+		Log.i("onPageScrollStateChanged", "arg0:"+arg0);
 	}
 
 	public void onPageScrolled(int arg0, float arg1, int arg2) {
 		// TODO Auto-generated method stub
+		Log.i("onPageScrolled", "arg0:"+arg0+",arg1:"+arg1+",arg2:"+arg2);
 	}
 
 	public void onPageSelected(int arg0) {
 		// TODO Auto-generated method stub
+		Log.i("onPageScrollStateChanged", "arg0:"+arg0);
 		mCurrentIndex = arg0;
 		mPageNumberButton.startAnimation(mAnimation);
 		mPageNumberButton.setText( String.valueOf( mCurrentIndex+1 ) );
