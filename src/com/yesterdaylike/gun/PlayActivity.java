@@ -19,6 +19,7 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -36,7 +37,12 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 	private int mTypeNo;
 	private int mCurrentIndex = 0;
 	private ImageButton mPageNumberButton;
-	private Animation mAnimation;
+	private Animation boardUpAnimation;
+	private Animation boardDownAnimation;
+
+	private Animation animationLeft;
+	private Animation animationRight;
+	private ImageView mLightView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +50,10 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_play);
 
-		mAnimation = AnimationUtils.loadAnimation(this, R.anim.horizontal_scale);
-
 		mPageNumberButton = (ImageButton) findViewById(R.id.page_number_btn);
 		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
+
+		BoardAnim();
 
 		mTypeNo = getIntent().getIntExtra(MainActivity.TYPE_NO, -1);
 		Log.i(MainActivity.TYPE_NO, ""+mTypeNo);
@@ -75,31 +81,35 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		mViewPager.setOnPageChangeListener(this);
 		mViewPager.setOnTouchListener(this);
 		onPageSelected( 0 );
-		
+
 		//获取要嵌入迷你广告条的布局
-	    RelativeLayout miniBannerLayout=(RelativeLayout)findViewById(R.id.miniBannerLayout);
-	    //demo 1 迷你Banner : 宽满屏，高32dp
-	    //DiyBanner banner = new DiyBanner(this, DiyAdSize.SIZE_MATCH_SCREENx32);//传入高度为32dp的AdSize来定义迷你Banner    
-	    //demo 2 迷你Banner : 宽320dp，高32dp
-	    DiyBanner banner = new DiyBanner(this, DiyAdSize.SIZE_320x32);//传入高度为32dp的AdSize来定义迷你Banner 
-	    //将积分Banner加入到布局中
-	    miniBannerLayout.addView(banner);
-	    
+		RelativeLayout miniBannerLayout=(RelativeLayout)findViewById(R.id.miniBannerLayout);
+		//demo 1 迷你Banner : 宽满屏，高32dp
+		//DiyBanner banner = new DiyBanner(this, DiyAdSize.SIZE_MATCH_SCREENx32);//传入高度为32dp的AdSize来定义迷你Banner    
+		//demo 2 迷你Banner : 宽320dp，高32dp
+		DiyBanner banner = new DiyBanner(this, DiyAdSize.SIZE_320x32);//传入高度为32dp的AdSize来定义迷你Banner 
+		//将积分Banner加入到布局中
+		miniBannerLayout.addView(banner);
+
 		//获取要嵌入迷你广告条的布局
-	    RelativeLayout miniBanner2Layout=(RelativeLayout)findViewById(R.id.miniBanner2Layout);
-	    //demo 1 迷你Banner : 宽满屏，高32dp
-	    //DiyBanner banner = new DiyBanner(this, DiyAdSize.SIZE_MATCH_SCREENx32);//传入高度为32dp的AdSize来定义迷你Banner    
-	    //demo 2 迷你Banner : 宽320dp，高32dp
-	    DiyBanner banner2 = new DiyBanner(this, DiyAdSize.SIZE_320x32);//传入高度为32dp的AdSize来定义迷你Banner 
-	    //将积分Banner加入到布局中
-	    miniBanner2Layout.addView(banner2);
-		
+		RelativeLayout miniBanner2Layout=(RelativeLayout)findViewById(R.id.miniBanner2Layout);
+		//demo 1 迷你Banner : 宽满屏，高32dp
+		//DiyBanner banner = new DiyBanner(this, DiyAdSize.SIZE_MATCH_SCREENx32);//传入高度为32dp的AdSize来定义迷你Banner    
+		//demo 2 迷你Banner : 宽320dp，高32dp
+		DiyBanner banner2 = new DiyBanner(this, DiyAdSize.SIZE_320x32);//传入高度为32dp的AdSize来定义迷你Banner 
+		//将积分Banner加入到布局中
+		miniBanner2Layout.addView(banner2);
+
 		//实例化广告条
-	    AdView adView = new AdView(this, AdSize.SIZE_320x50);
-	    //获取要嵌入广告条的布局
-	    LinearLayout adLayout2=(LinearLayout)findViewById(R.id.adLayout);
-	    //将广告条加入到布局中
-	    adLayout2.addView(adView);
+		AdView adView = new AdView(this, AdSize.SIZE_320x50);
+		//获取要嵌入广告条的布局
+		LinearLayout adLayout2=(LinearLayout)findViewById(R.id.adLayout);
+		//将广告条加入到布局中
+		adLayout2.addView(adView);
+
+		mLightView = (ImageView) findViewById(R.id.light_layout);
+		LightAnim();
+		mLightView.startAnimation(animationLeft);
 	}
 
 	public class Item{
@@ -151,8 +161,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		// TODO Auto-generated method stub
 		Log.i("onPageScrollStateChanged", "arg0:"+arg0);
 		mCurrentIndex = arg0;
-		mPageNumberButton.startAnimation(mAnimation);
-		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
+		mPageNumberButton.startAnimation(boardUpAnimation);
 
 		//sound_name.setText(SoundBox.soundNames[++soundTest]);
 		//float rating = mSudokus[arg0].degreeOfDifficulty;
@@ -164,6 +173,82 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		//timerTextView.setText("");
 		//closingTimeTextView.setText("");
 	}
+
+
+	private void LightAnim(){
+		animationLeft = AnimationUtils.loadAnimation(this, R.anim.light_left);
+		animationLeft.setFillAfter(true);
+		animationRight = AnimationUtils.loadAnimation(this, R.anim.light_right);
+		animationRight.setFillAfter(true);
+		animationLeft.setAnimationListener(new AnimationListener() {
+
+			@Override
+			public void onAnimationStart(Animation animation) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				// TODO Auto-generated method stub
+				mLightView.startAnimation(animationRight);
+			}
+		});
+		animationRight.setAnimationListener(new AnimationListener() {
+
+			@Override
+			public void onAnimationStart(Animation animation) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				// TODO Auto-generated method stub
+				mLightView.startAnimation(animationLeft);
+			}
+		});
+	}
+
+	private void BoardAnim(){
+		boardUpAnimation = AnimationUtils.loadAnimation(this, R.anim.board_up);
+		boardUpAnimation.setFillAfter(true);
+		boardDownAnimation = AnimationUtils.loadAnimation(this, R.anim.board_down);
+		boardDownAnimation.setFillAfter(true);
+		boardUpAnimation.setAnimationListener(new AnimationListener() {
+
+			@Override
+			public void onAnimationStart(Animation animation) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				// TODO Auto-generated method stub
+				mPageNumberButton.startAnimation(boardDownAnimation);
+				mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
+			}
+		});
+	}
+
 
 	public void onClick( View view ){
 
@@ -198,7 +283,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			final Item item = (Item)viewCur.getTag();
 			shoot(item);
 			break;
-			
+
 		case R.id.back_button:
 			this.finish();
 			break;
@@ -214,7 +299,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			break;
 		}
 	}
-	
+
 	private void shoot(final Item item){
 		Animation shakeAnim = AnimationUtils.loadAnimation(this, R.anim.shake_y);
 		Animation fireAnim = AnimationUtils.loadAnimation(this, R.anim.fire);

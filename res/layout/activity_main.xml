@@ -14,7 +14,8 @@
         android:id="@+id/light_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent"/>    -->
+        android:background="@android:color/transparent"/>
+    -->
 
     <ImageView
         android:id="@+id/light_layout"
@@ -23,17 +24,6 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="100dp"
         android:src="@drawable/player" />
-
-    <ImageButton
-        android:id="@+id/page_number_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="@dimen/layout_marginRight"
-        android:layout_marginTop="@dimen/layout_marginTop"
-        android:background="@drawable/yellow_button"
-        android:onClick="onButtonClick" />
 
     <Button
         android:id="@+id/start_button"
@@ -68,8 +58,7 @@
         android:layout_marginRight="@dimen/layout_marginRight"
         android:background="@drawable/blue_button"
         android:onClick="onButtonClick"
-        android:textSize="24dp" >
-    -->
+        android:textSize="24dp" >    -->
 
     <com.yesterdaylike.gun.Panel
         android:id="@+id/help_panel"
@@ -90,5 +79,16 @@
             android:padding="10dp"
             android:textSize="24dp" />
     </com.yesterdaylike.gun.Panel>
+
+    <ImageButton
+        android:id="@+id/page_number_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/layout_marginRight"
+        android:layout_marginTop="@dimen/layout_marginTop"
+        android:background="@drawable/yellow_button"
+        android:onClick="onButtonClick" />
 
 </RelativeLayout>
