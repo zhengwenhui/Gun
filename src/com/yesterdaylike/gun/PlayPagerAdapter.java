@@ -22,7 +22,7 @@ public class PlayPagerAdapter extends PagerAdapter {
 	private GunInfo [][]mGunsInfo = {
 			{
 				new GunInfo( R.drawable.handgun0, R.drawable.background, R.drawable.flash, R.raw.deagle_fire),
-				new GunInfo( R.drawable.handgun1, R.drawable.background2, R.drawable.flash, R.raw.r700_fire),
+				new GunInfo( R.drawable.handgun1, R.drawable.background, R.drawable.flash, R.raw.r700_fire),
 				new GunInfo( R.drawable.handgun2, R.drawable.background, R.drawable.flash, R.raw.scout_fire),
 				new GunInfo( R.drawable.handgun3, R.drawable.background, R.drawable.flash, R.raw.sg550_fire),
 				new GunInfo( R.drawable.handgun4, R.drawable.background, R.drawable.flash, R.raw.aug_fire),

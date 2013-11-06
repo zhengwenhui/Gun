@@ -14,10 +14,12 @@ public final class R {
         public static final int cycle=0x7f040002;
         public static final int fire=0x7f040003;
         public static final int gun=0x7f040004;
-        public static final int light_left=0x7f040005;
-        public static final int light_right=0x7f040006;
-        public static final int shake_x=0x7f040007;
-        public static final int shake_y=0x7f040008;
+        public static final int gun_down=0x7f040005;
+        public static final int light_left=0x7f040006;
+        public static final int light_right=0x7f040007;
+        public static final int roll=0x7f040008;
+        public static final int shake_x=0x7f040009;
+        public static final int shake_y=0x7f04000a;
     }
     public static final class array {
         public static final int gun_kind_name=0x7f0a0000;
@@ -438,7 +440,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.yesterdaylike.gun:animationDuration
+          @attr name android:animationDuration
         */
         public static final int Panel_animationDuration = 0;
         /**
@@ -450,7 +452,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.yesterdaylike.gun:content
+          @attr name android:content
         */
         public static final int Panel_content = 2;
         /**
@@ -466,7 +468,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.yesterdaylike.gun:linearFlying
+          @attr name android:linearFlying
         */
         public static final int Panel_linearFlying = 3;
         /**
@@ -487,7 +489,7 @@ containing a value of this type.
 <tr><td><code>right</code></td><td>3</td><td> Panel placed at right of the screen. </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.yesterdaylike.gun:position
+          @attr name android:position
         */
         public static final int Panel_position = 1;
         /**
@@ -505,7 +507,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.yesterdaylike.gun:weight
+          @attr name android:weight
         */
         public static final int Panel_weight = 4;
     };

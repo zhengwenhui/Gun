@@ -18,6 +18,7 @@ import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,10 +44,14 @@ implements OnPageChangeListener, OnTouchListener{
 	private Animation animationLeft;
 	private Animation animationRight;
 	private ImageView mLightView;
+	
+	private Animation animationRoll;
+	private Button mStartButton;
+	private Button mBackButton;
 
 	private Vibrator vibrator;  
 	public static String TYPE_NO = "Type_No";
-
+	private Animation gunDownAnimation;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -56,7 +61,16 @@ implements OnPageChangeListener, OnTouchListener{
 		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
 
 		BoardAnim();
+		
+		animationRoll = AnimationUtils.loadAnimation(this, R.anim.roll);
+		mStartButton = (Button) findViewById(R.id.start_button);
+		mBackButton = (Button) findViewById(R.id.back_button);
+		mStartButton.startAnimation(animationRoll);
+		mBackButton.startAnimation(animationRoll);
 
+		gunDownAnimation = AnimationUtils.loadAnimation(this, R.anim.gun_down); 
+		gunDownAnimation.setFillAfter(true);
+		
 		mHelpPanel = (Panel)findViewById(R.id.help_panel);
 		mHelpTextView = (TextView) mHelpPanel.findViewById(R.id.panelContent);
 
@@ -103,9 +117,9 @@ implements OnPageChangeListener, OnTouchListener{
 		//SmartBannerManager.init(this);
 		//SmartBannerManager.show(this);
 
-		mLightView = (ImageView) findViewById(R.id.light_layout);
-		LightAnim();
-		mLightView.startAnimation(animationLeft);
+		//mLightView = (ImageView) findViewById(R.id.light_layout);
+		//LightAnim();
+		//mLightView.startAnimation(animationLeft);
 	}
 
 	private void LightAnim(){
@@ -216,6 +230,9 @@ implements OnPageChangeListener, OnTouchListener{
 		mCurrentIndex = arg0;
 		mPageNumberButton.startAnimation(boardUpAnimation);
 		mHelpTextView.setText(mHelpDoc[mCurrentIndex]);
+		
+		View view = mViewsList.get(arg0).findViewById(R.id.gun_category);
+		view.startAnimation(gunDownAnimation);
 	}
 
 	public void onClick( View view ){

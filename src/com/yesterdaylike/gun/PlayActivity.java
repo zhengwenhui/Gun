@@ -18,6 +18,7 @@ import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -43,7 +44,11 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 	private Animation animationLeft;
 	private Animation animationRight;
 	private ImageView mLightView;
-
+	
+	private Animation animationRoll;
+	private Button mStartButton;
+	private Button mBackButton;
+	private Animation gunDownAnimation;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -54,6 +59,15 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
 
 		BoardAnim();
+		
+		animationRoll = AnimationUtils.loadAnimation(this, R.anim.roll);
+		mStartButton = (Button) findViewById(R.id.start_button);
+		mBackButton = (Button) findViewById(R.id.back_button);
+		mStartButton.startAnimation(animationRoll);
+		mBackButton.startAnimation(animationRoll);
+		
+		gunDownAnimation = AnimationUtils.loadAnimation(this, R.anim.gun_down); 
+		gunDownAnimation.setFillAfter(true);
 
 		mTypeNo = getIntent().getIntExtra(MainActivity.TYPE_NO, -1);
 		Log.i(MainActivity.TYPE_NO, ""+mTypeNo);
@@ -107,9 +121,9 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		//将广告条加入到布局中
 		adLayout2.addView(adView);
 
-		mLightView = (ImageView) findViewById(R.id.light_layout);
-		LightAnim();
-		mLightView.startAnimation(animationLeft);
+		//mLightView = (ImageView) findViewById(R.id.light_layout);
+		//LightAnim();
+		//mLightView.startAnimation(animationLeft);
 	}
 
 	public class Item{
@@ -162,6 +176,9 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		Log.i("onPageScrollStateChanged", "arg0:"+arg0);
 		mCurrentIndex = arg0;
 		mPageNumberButton.startAnimation(boardUpAnimation);
+		
+		View view = mViewList.get(arg0%4).findViewById(R.id.gun);
+		view.startAnimation(gunDownAnimation);
 
 		//sound_name.setText(SoundBox.soundNames[++soundTest]);
 		//float rating = mSudokus[arg0].degreeOfDifficulty;
@@ -274,7 +291,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			else if( (mCurrentIndex+1) == mAdapter.getCount() ){
 				a = -1;
 			}
-			mViewPager.setCurrentItem( mCurrentIndex+a, false);
+			mViewPager.setCurrentItem( mCurrentIndex+a, true);
 			//mViewPager.setCurrentItem(item, smoothScroll);
 			break;
 
