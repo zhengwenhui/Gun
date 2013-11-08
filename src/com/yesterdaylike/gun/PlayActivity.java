@@ -56,7 +56,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		setContentView(R.layout.activity_play);
 
 		mPageNumberButton = (ImageButton) findViewById(R.id.page_number_btn);
-		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
+		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%GunInfo.number.length]);
 
 		BoardAnim();
 		
@@ -261,7 +261,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 			public void onAnimationEnd(Animation animation) {
 				// TODO Auto-generated method stub
 				mPageNumberButton.startAnimation(boardDownAnimation);
-				mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%10]);
+				mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%GunInfo.number.length]);
 			}
 		});
 	}

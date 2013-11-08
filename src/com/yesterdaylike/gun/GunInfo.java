@@ -20,6 +20,8 @@ public class GunInfo {
 		R.drawable.n7,
 		R.drawable.n8,
 		R.drawable.n9,
+		R.drawable.n10,
+		R.drawable.n11,
 	};
 	
 	public GunInfo(int gun,int bg,int fire,int sound) {
