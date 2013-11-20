@@ -6,6 +6,7 @@ import java.util.List;
 import net.youmi.android.AdManager;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v4.view.ViewPager;
@@ -37,14 +38,11 @@ implements OnPageChangeListener, OnTouchListener{
 	private Panel mHelpPanel;
 	private TextView mHelpTextView;
 	private String[] mHelpDoc;
-	//private Panel feedBackPanel;
 
-	//private EditText messageEditText;
-	//private EditText subjectEditText;
 	private Animation animationLeft;
 	private Animation animationRight;
 	private ImageView mLightView;
-	
+
 	private Animation animationRoll;
 	private Button mStartButton;
 	private Button mBackButton;
@@ -52,6 +50,9 @@ implements OnPageChangeListener, OnTouchListener{
 	private Vibrator vibrator;  
 	public static String TYPE_NO = "Type_No";
 	private Animation gunDownAnimation;
+	
+	private String FIRST_RUN="FIRST_RUN";
+	private View clingView;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -61,7 +62,7 @@ implements OnPageChangeListener, OnTouchListener{
 		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%GunInfo.number.length]);
 
 		BoardAnim();
-		
+
 		animationRoll = AnimationUtils.loadAnimation(this, R.anim.roll);
 		mStartButton = (Button) findViewById(R.id.start_button);
 		mBackButton = (Button) findViewById(R.id.back_button);
@@ -70,7 +71,7 @@ implements OnPageChangeListener, OnTouchListener{
 
 		gunDownAnimation = AnimationUtils.loadAnimation(this, R.anim.gun_down); 
 		gunDownAnimation.setFillAfter(true);
-		
+
 		mHelpPanel = (Panel)findViewById(R.id.help_panel);
 		mHelpTextView = (TextView) mHelpPanel.findViewById(R.id.panelContent);
 
@@ -120,6 +121,15 @@ implements OnPageChangeListener, OnTouchListener{
 		//mLightView = (ImageView) findViewById(R.id.light_layout);
 		//LightAnim();
 		//mLightView.startAnimation(animationLeft);
+
+		SharedPreferences settings = getSharedPreferences(FIRST_RUN, 0);  
+		if ( settings.getBoolean(FIRST_RUN, true) ) {
+			clingView = findViewById(R.id.cling);
+			clingView.setVisibility(View.VISIBLE);
+			SharedPreferences.Editor editor = settings.edit();  
+			editor.putBoolean(FIRST_RUN, false);
+			editor.commit();
+		}
 	}
 
 	private void LightAnim(){
@@ -230,7 +240,7 @@ implements OnPageChangeListener, OnTouchListener{
 		mCurrentIndex = arg0;
 		mPageNumberButton.startAnimation(boardUpAnimation);
 		mHelpTextView.setText(mHelpDoc[mCurrentIndex]);
-		
+
 		View view = mViewsList.get(arg0).findViewById(R.id.gun_category);
 		view.startAnimation(gunDownAnimation);
 	}
@@ -241,6 +251,11 @@ implements OnPageChangeListener, OnTouchListener{
 			feedBackPanel.onClick();
 			return;
 		}*/
+		if( null != clingView ){
+			clingView.setVisibility(View.GONE);
+			clingView = null;
+			return;
+		}
 
 		if(mHelpPanel.isOpen()){
 			mHelpPanel.onClick();
@@ -254,6 +269,13 @@ implements OnPageChangeListener, OnTouchListener{
 	}
 
 	public void onButtonClick( View view ){
+		
+		if( null != clingView ){
+			clingView.setVisibility(View.GONE);
+			clingView = null;
+			return;
+		}
+		
 		switch (view.getId()){
 		case R.id.page_number_button:
 			mViewPager.setCurrentItem((mCurrentIndex + 1) % mAdapter.getCount(), true);
@@ -298,6 +320,11 @@ implements OnPageChangeListener, OnTouchListener{
 		/*if(feedBackPanel.isOpen()){
 			feedBackPanel.onClick();
 		}*/
+		if( null != clingView ){
+			clingView.setVisibility(View.GONE);
+			clingView = null;
+			return false;
+		}
 
 		if(mHelpPanel.isOpen()){
 			mHelpPanel.onClick();

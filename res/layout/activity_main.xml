@@ -51,8 +51,7 @@
         android:layout_marginRight="@dimen/layout_marginRight"
         android:background="@drawable/blue_button"
         android:onClick="onButtonClick"
-        android:textSize="24dp" >
-    -->
+        android:textSize="24dp" >    -->
 
     <com.yesterdaylike.gun.Panel
         android:id="@+id/help_panel"
@@ -84,5 +83,12 @@
         android:layout_marginTop="@dimen/layout_marginTop"
         android:background="@drawable/yellow_button"
         android:onClick="onButtonClick" />
+
+    <View
+        android:id="@+id/cling"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible"
+        android:background="@drawable/cling" />
 
 </RelativeLayout>

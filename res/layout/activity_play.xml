@@ -81,7 +81,11 @@
         android:orientation="horizontal"
         android:gravity="center_horizontal" >
     </LinearLayout>
-
+<!--     <View
+        android:id="@+id/cling"
+        android:background="@drawable/cling"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" /> -->
     <!--
     <RelativeLayout
         android:id="@+id/title_bar_layout"

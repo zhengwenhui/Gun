@@ -1,6 +1,5 @@
 package com.yesterdaylike.gun;
 
-
 import java.util.HashMap;
 import java.util.Map;
 

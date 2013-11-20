@@ -16,15 +16,15 @@ public class MainPagerAdapter extends PagerAdapter {
 	//界面列表
 	private List<View> mViews;
 	private int[] mGuns = {
-			R.drawable.handgun6,
-			R.drawable.rifles9,
-			R.drawable.tactical_rifle_9,
-			R.drawable.shotgun_7,
-			R.drawable.tactical_shotgun_8,
-			R.drawable.combo_gun_6,
-			R.drawable.black_powder_rifle_5,
-			R.drawable.revolver_8,
-			R.drawable.specialty_7,
+			R.drawable.handgun,
+			R.drawable.rifles,
+			R.drawable.tactical_rifle,
+			R.drawable.shotgun,
+			R.drawable.tactical_shotgun,
+			R.drawable.combo_gun,
+			R.drawable.black_powder_rifle,
+			R.drawable.revolver,
+			R.drawable.specialty,
 	};
 	
 	private String[] mGunsName;
