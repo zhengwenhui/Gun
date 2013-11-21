@@ -117,9 +117,9 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		//实例化广告条
 		AdView adView = new AdView(this, AdSize.SIZE_320x50);
 		//获取要嵌入广告条的布局
-		LinearLayout adLayout2=(LinearLayout)findViewById(R.id.adLayout);
+		LinearLayout adLayout=(LinearLayout)findViewById(R.id.adLayout);
 		//将广告条加入到布局中
-		adLayout2.addView(adView);
+		adLayout.addView(adView);
 
 		//mLightView = (ImageView) findViewById(R.id.light_layout);
 		//LightAnim();

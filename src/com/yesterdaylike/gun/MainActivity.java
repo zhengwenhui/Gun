@@ -261,7 +261,6 @@ implements OnPageChangeListener, OnTouchListener{
 			mHelpPanel.onClick();
 			return;
 		}
-		Log.v("zhengwenhui", "onClick PlayActivity");
 		Intent intent = new Intent(this, PlayActivity.class);
 		intent.putExtra(TYPE_NO, mCurrentIndex);
 		startActivity(intent);
@@ -279,7 +278,6 @@ implements OnPageChangeListener, OnTouchListener{
 		switch (view.getId()){
 		case R.id.page_number_button:
 			mViewPager.setCurrentItem((mCurrentIndex + 1) % mAdapter.getCount(), true);
-			Log.v("zhengwenhui", "page_number_button");
 			break;
 		case R.id.start_button:
 			//¿ªÊ¼
