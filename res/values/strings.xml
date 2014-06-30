@@ -13,13 +13,17 @@
 
     <string-array name="gun_kind_name">
         <item>handgun</item>
+        <item>rifles</item>        
         <item>rifles</item>
         <item>tactical rifles</item>
+		<item>shotguns</item>
         <item>shotguns</item>
         <item>tactical shotguns</item>
         <item>combo guns</item>
         <item>black powder rifles</item>
         <item>revolvers</item>
+        <item>revolvers</item>
+        <item>specialty</item>
         <item>specialty</item>
     </string-array>
     

@@ -14,12 +14,16 @@
     <string-array name="gun_kind_name">
         <item>手枪</item>
         <item>步枪</item>
+        <item>步枪</item>
         <item>战术步枪</item>
+        <item>霰弹枪</item>
         <item>霰弹枪</item>
         <item>战术霰弹枪</item>
         <item>组合枪</item>
         <item>黑火药步枪</item>
         <item>左轮手枪</item>
+        <item>左轮手枪</item>
+        <item>特产枪</item>
         <item>特产枪</item>
     </string-array>
     <string-array name="help_doc">

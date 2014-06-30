@@ -15,23 +15,12 @@ public class MainPagerAdapter extends PagerAdapter {
 	private int mCount;
 	//界面列表
 	private List<View> mViews;
-	private int[] mGuns = {
-			R.drawable.handgun,
-			R.drawable.rifles,
-			R.drawable.tactical_rifle,
-			R.drawable.shotgun,
-			R.drawable.tactical_shotgun,
-			R.drawable.combo_gun,
-			R.drawable.black_powder_rifle,
-			R.drawable.revolver,
-			R.drawable.specialty,
-	};
-	
+
 	private String[] mGunsName;
 
 	public MainPagerAdapter ( Context context, List<View> views ) {
 		this.mViews = views;
-		mCount = mGuns.length;
+		mCount = views.size();
 		mGunsName = context.getResources().getStringArray(R.array.gun_kind_name);
 	}
 
@@ -52,8 +41,37 @@ public class MainPagerAdapter extends PagerAdapter {
 	public Object instantiateItem(View container, int position) {
 		// TODO Auto-generated method stub
 		View view = mViews.get(position);
+
+		int index = position*6;
+		ImageButton gun = (ImageButton)view.findViewById(R.id.gun_00);
+		int resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		gun.setImageResource(resId);
+
+		gun = (ImageButton)view.findViewById(R.id.gun_01);
+		resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		gun.setImageResource(resId);
+
+		gun = (ImageButton)view.findViewById(R.id.gun_02);
+		resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		gun.setImageResource(resId);
+
+		gun = (ImageButton)view.findViewById(R.id.gun_10);
+		resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		gun.setImageResource(resId);
+
+		gun = (ImageButton)view.findViewById(R.id.gun_11);
+		resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		gun.setImageResource(resId);
+
+		gun = (ImageButton)view.findViewById(R.id.gun_12);
+		resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		gun.setImageResource(resId);
+
+
+
+
 		( ( ViewPager ) container).addView( view );
-		((ImageButton)view.findViewById(R.id.gun_category)).setImageResource(mGuns[position]);
+		//((ImageButton)view.findViewById(R.id.gun_category)).setImageResource(mGuns[position]);
 		((TextView)view.findViewById(R.id.gun_category_name)).setText(mGunsName[position]);
 		//mOnInstantiateItemListener.OnInstantiateItem(position,position);
 		return view;

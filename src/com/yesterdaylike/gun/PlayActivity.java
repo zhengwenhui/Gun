@@ -94,7 +94,8 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		mViewPager.setAdapter(mAdapter);
 		mViewPager.setOnPageChangeListener(this);
 		mViewPager.setOnTouchListener(this);
-		onPageSelected( 0 );
+		mViewPager.setCurrentItem(mTypeNo);
+		onPageSelected( mTypeNo );
 
 		//获取要嵌入迷你广告条的布局
 		RelativeLayout miniBannerLayout=(RelativeLayout)findViewById(R.id.miniBannerLayout);

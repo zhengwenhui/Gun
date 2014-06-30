@@ -9,15 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <ImageView
+<!--     <ImageView
         android:id="@+id/light_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/player"
-        android:visibility="gone" />
+        android:visibility="gone" /> -->
 
+    <!--
     <Button
         android:id="@+id/start_button"
         android:layout_width="wrap_content"
@@ -39,6 +40,27 @@
         android:layout_marginLeft="@dimen/layout_marginRight"
         android:background="@drawable/blue_button"
         android:onClick="onButtonClick" />
+    -->
+
+    <Button
+        android:id="@+id/right_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/layout_marginRight"
+        android:background="@drawable/right"
+        android:onClick="onButtonClick" />
+
+    <Button
+        android:id="@+id/left_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/layout_marginRight"
+        android:background="@drawable/left"
+        android:onClick="onButtonClick" />
 
     <!--
 	<Button
@@ -51,7 +73,8 @@
         android:layout_marginRight="@dimen/layout_marginRight"
         android:background="@drawable/blue_button"
         android:onClick="onButtonClick"
-        android:textSize="24dp" >    -->
+        android:textSize="24dp" >
+    -->
 
     <com.yesterdaylike.gun.Panel
         android:id="@+id/help_panel"
@@ -84,11 +107,11 @@
         android:background="@drawable/yellow_button"
         android:onClick="onButtonClick" />
 
-    <View
+<!--<View
         android:id="@+id/cling"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:visibility="invisible"
-        android:background="@drawable/cling" />
+        android:background="@drawable/cling"
+        android:visibility="invisible" /> -->
 
 </RelativeLayout>

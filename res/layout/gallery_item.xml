@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" >
+
+    <TableLayout
+        android:id="@+id/gun_category"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background2"
+        android:padding="12dp"
+        android:stretchColumns="*" >
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/gun_00"
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:onClick="onClick"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/gun_01"
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:onClick="onClick"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/gun_02"
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:onClick="onClick"
+                android:scaleType="fitCenter" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/gun_10"
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:onClick="onClick"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/gun_11"
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:onClick="onClick"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/gun_12"
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:onClick="onClick"
+                android:scaleType="fitCenter" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/gun_category_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="2dp"
+        android:paddingLeft="10dp"
+        android:shadowColor="@android:color/darker_gray"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="48sp" />
+
+</RelativeLayout>
