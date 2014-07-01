@@ -88,34 +88,6 @@ implements OnPageChangeListener, OnTouchListener{
 			mViewsList.add( view );
 		}
 
-/*		View view1 = layoutInflater.inflate(R.layout.gallery_item, null);
-		View view2 = layoutInflater.inflate(R.layout.gallery_item1, null);
-		//View view3 = layoutInflater.inflate(R.layout.gallery_item2, null);
-		View view4 = layoutInflater.inflate(R.layout.gallery_item3, null);
-		View view5 = layoutInflater.inflate(R.layout.gallery_item4, null);
-		View view6 = layoutInflater.inflate(R.layout.gallery_item5, null);
-		View view7 = layoutInflater.inflate(R.layout.gallery_item6, null);
-		View view8 = layoutInflater.inflate(R.layout.gallery_item7, null);
-		View view9 = layoutInflater.inflate(R.layout.gallery_item8, null);
-		View view10 = layoutInflater.inflate(R.layout.gallery_item9, null);
-		View view11 = layoutInflater.inflate(R.layout.gallery_item10, null);
-		View view12 = layoutInflater.inflate(R.layout.gallery_item11, null);
-		View view13 = layoutInflater.inflate(R.layout.gallery_item12, null);
-
-		mViewsList.add( view1 );
-		mViewsList.add( view2 );
-		//mViewsList.add( view3 );
-		mViewsList.add( view4 );
-		mViewsList.add( view5 );
-		mViewsList.add( view6 );
-		mViewsList.add( view7 );
-		mViewsList.add( view8 );
-		mViewsList.add( view9 );
-		mViewsList.add( view10 );
-		mViewsList.add( view11 );
-		mViewsList.add( view12 );
-		mViewsList.add( view13 );*/
-
 		mViewPager = (ViewPager)findViewById(R.id.sudoku_type_viewpager);
 		mAdapter = new MainPagerAdapter(this, mViewsList);
 		mViewPager.setAdapter(mAdapter);

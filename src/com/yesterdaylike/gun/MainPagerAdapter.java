@@ -18,6 +18,100 @@ public class MainPagerAdapter extends PagerAdapter {
 
 	private String[] mGunsName;
 
+
+	public static int []mGunsDrawable = {
+		//0
+		R.drawable.handgun0_small,
+		R.drawable.handgun1, 
+		R.drawable.handgun2, 
+		R.drawable.handgun3, 
+		R.drawable.handgun4, 
+		R.drawable.handgun5,
+		//1
+		R.drawable.handgun6,
+		R.drawable.rifles0, 
+		R.drawable.rifles1, 
+		R.drawable.rifles2, 
+		R.drawable.rifles3, 
+		R.drawable.rifles4, 
+		//2
+		R.drawable.rifles5, 
+		R.drawable.rifles6, 
+		R.drawable.rifles7, 
+		R.drawable.rifles8, 
+		R.drawable.rifles9, 
+		R.drawable.rifles10, 
+		//3
+		R.drawable.tactical_rifle_0, 
+		R.drawable.tactical_rifle_1, 
+		R.drawable.tactical_rifle_2, 
+		R.drawable.tactical_rifle_3, 
+		R.drawable.tactical_rifle_4, 
+		R.drawable.tactical_rifle_5, 
+		//4
+		R.drawable.tactical_rifle_6, 
+		R.drawable.tactical_rifle_7, 
+		R.drawable.tactical_rifle_8, 
+		R.drawable.tactical_rifle_9, 
+		R.drawable.tactical_rifle_10, 
+		R.drawable.shotgun_0, 
+		//5
+		R.drawable.shotgun_1,
+		R.drawable.shotgun_2,
+		R.drawable.shotgun_3,
+		R.drawable.shotgun_4,
+		R.drawable.shotgun_5,
+		R.drawable.shotgun_6,
+		//5
+		R.drawable.shotgun_7,
+		R.drawable.tactical_shotgun_0,
+		R.drawable.tactical_shotgun_1,
+		R.drawable.tactical_shotgun_2,
+		R.drawable.tactical_shotgun_3,
+		R.drawable.tactical_shotgun_4,
+		//6
+		R.drawable.tactical_shotgun_5,
+		R.drawable.tactical_shotgun_6,
+		R.drawable.tactical_shotgun_7, 
+		R.drawable.tactical_shotgun_8,
+		R.drawable.combo_gun_0,
+		R.drawable.combo_gun_1,
+		//7
+		R.drawable.combo_gun_2,
+		R.drawable.combo_gun_3,
+		R.drawable.combo_gun_4,
+		R.drawable.combo_gun_5,
+		R.drawable.combo_gun_6,
+		R.drawable.black_powder_rifle_0,
+		//8
+		R.drawable.black_powder_rifle_1,
+		R.drawable.black_powder_rifle_2,
+		R.drawable.black_powder_rifle_3,
+		R.drawable.black_powder_rifle_4,
+		R.drawable.black_powder_rifle_5,
+		R.drawable.revolver_0, 
+		//9
+		R.drawable.revolver_1,
+		R.drawable.revolver_2, 
+		R.drawable.revolver_3, 
+		R.drawable.revolver_4, 
+		R.drawable.revolver_5, 
+		R.drawable.revolver_6, 
+		//11
+		R.drawable.revolver_7, 
+		R.drawable.revolver_8, 
+		R.drawable.specialty_0, 
+		R.drawable.specialty_1, 
+		R.drawable.specialty_2, 
+		R.drawable.specialty_3, 
+		//12
+		R.drawable.specialty_4, 
+		R.drawable.specialty_5, 
+		R.drawable.specialty_6, 
+		R.drawable.specialty_7, 
+
+	};
+
 	public MainPagerAdapter ( Context context, List<View> views ) {
 		this.mViews = views;
 		mCount = views.size();
@@ -44,31 +138,28 @@ public class MainPagerAdapter extends PagerAdapter {
 
 		int index = position*6;
 		ImageButton gun = (ImageButton)view.findViewById(R.id.gun_00);
-		int resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		int resId = mGunsDrawable[index++];
 		gun.setImageResource(resId);
 
 		gun = (ImageButton)view.findViewById(R.id.gun_01);
-		resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		resId = mGunsDrawable[index++];
 		gun.setImageResource(resId);
 
 		gun = (ImageButton)view.findViewById(R.id.gun_02);
-		resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		resId = mGunsDrawable[index++];
 		gun.setImageResource(resId);
 
 		gun = (ImageButton)view.findViewById(R.id.gun_10);
-		resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		resId = mGunsDrawable[index++];
 		gun.setImageResource(resId);
 
 		gun = (ImageButton)view.findViewById(R.id.gun_11);
-		resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		resId = mGunsDrawable[index++];
 		gun.setImageResource(resId);
 
 		gun = (ImageButton)view.findViewById(R.id.gun_12);
-		resId = PlayPagerAdapter.mGunsInfo[index++].gun;
+		resId = mGunsDrawable[index++];
 		gun.setImageResource(resId);
-
-
-
 
 		( ( ViewPager ) container).addView( view );
 		//((ImageButton)view.findViewById(R.id.gun_category)).setImageResource(mGuns[position]);
