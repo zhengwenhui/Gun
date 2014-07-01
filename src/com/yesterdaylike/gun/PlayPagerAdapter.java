@@ -2,6 +2,7 @@ package com.yesterdaylike.gun;
 
 import java.util.List;
 
+import android.content.Context;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -17,6 +18,7 @@ public class PlayPagerAdapter extends PagerAdapter {
 	private OnInstantiateItemListener mOnInstantiateItemListener;
 	//private SoundBox mSoundBox;
 	private int mTypeNo;
+	private Context mContext;
 
 	public static GunInfo []mGunsInfo = {
 			//0
@@ -111,7 +113,8 @@ public class PlayPagerAdapter extends PagerAdapter {
 
 	};
 
-	public PlayPagerAdapter ( SoundBox soundBox, List<View> views, int typeNo) {
+	public PlayPagerAdapter ( SoundBox soundBox, List<View> views, int typeNo, Context context) {
+		mContext = context;
 		this.mViews = views;
 		//mSoundBox = soundBox;
 		mTypeNo = typeNo;
@@ -142,9 +145,12 @@ public class PlayPagerAdapter extends PagerAdapter {
 		//GunInfo gf = guninfo[position%guninfo.length];
 		GunInfo gf = mGunsInfo[position%mGunsInfo.length];
 
-		item.gun.setImageResource(gf.gun);
-		item.fire.setBackgroundResource(gf.fire);
-		item.background.setBackgroundResource(gf.bg);
+		//item.gun.setImageResource(gf.gun);
+		MemCache.loadBitmap(gf.gun, item.gun, mContext);
+		//item.fire.setBackgroundResource(gf.fire);
+		//item.background.setBackgroundResource(gf.bg);
+		MemCache.loadBitmap(gf.fire, item.fire, mContext);
+		MemCache.loadBitmap(gf.bg, item.background, mContext);
 		item.sound = gf.sound;
 
 		( ( ViewPager ) container).addView( view );

@@ -55,9 +55,12 @@ implements OnPageChangeListener, OnTouchListener{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		MemCache.init(this);
 
 		mPageNumberButton = (ImageButton) findViewById(R.id.page_number_button);
-		mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%GunInfo.number.length]);
+		//mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%GunInfo.number.length]);
+		int resId = GunInfo.number[(mCurrentIndex)%GunInfo.number.length];
+		MemCache.loadBitmap(resId, mPageNumberButton, MainActivity.this);
 
 		BoardAnim();
 
@@ -182,7 +185,9 @@ implements OnPageChangeListener, OnTouchListener{
 			public void onAnimationEnd(Animation animation) {
 				// TODO Auto-generated method stub
 				mPageNumberButton.startAnimation(boardDownAnimation);
-				mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%GunInfo.number.length]);
+				//mPageNumberButton.setImageResource(GunInfo.number[(mCurrentIndex+1)%GunInfo.number.length]);
+				int resId = GunInfo.number[(mCurrentIndex)%GunInfo.number.length];
+				MemCache.loadBitmap(resId, mPageNumberButton, MainActivity.this);
 			}
 		});
 	}

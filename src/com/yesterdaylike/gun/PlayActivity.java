@@ -89,7 +89,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		}
 
 		mViewPager = (GunViewPager)findViewById(R.id.gun_viewpager);
-		mAdapter = new PlayPagerAdapter( soundBox,mViewList,mTypeNo);
+		mAdapter = new PlayPagerAdapter( soundBox,mViewList,mTypeNo, this);
 		mAdapter.setOnInstantiateItemListener(this);
 		mViewPager.setAdapter(mAdapter);
 		mViewPager.setOnPageChangeListener(this);
