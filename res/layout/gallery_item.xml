@@ -18,6 +18,7 @@
                 android:id="@+id/gun_00"
                 android:layout_width="1dip"
                 android:layout_height="match_parent"
+                android:background="@drawable/background_item"
                 android:contentDescription="@string/app_name"
                 android:onClick="onClick"
                 android:scaleType="fitCenter" />
@@ -26,6 +27,7 @@
                 android:id="@+id/gun_01"
                 android:layout_width="1dip"
                 android:layout_height="match_parent"
+                android:background="@drawable/background_item2"
                 android:contentDescription="@string/app_name"
                 android:onClick="onClick"
                 android:scaleType="fitCenter" />
@@ -34,6 +36,7 @@
                 android:id="@+id/gun_02"
                 android:layout_width="1dip"
                 android:layout_height="match_parent"
+                android:background="@drawable/background_item3"
                 android:contentDescription="@string/app_name"
                 android:onClick="onClick"
                 android:scaleType="fitCenter" />
@@ -45,6 +48,7 @@
                 android:id="@+id/gun_10"
                 android:layout_width="1dip"
                 android:layout_height="match_parent"
+                android:background="@drawable/background_item3"
                 android:contentDescription="@string/app_name"
                 android:onClick="onClick"
                 android:scaleType="fitCenter" />
@@ -53,6 +57,7 @@
                 android:id="@+id/gun_11"
                 android:layout_width="1dip"
                 android:layout_height="match_parent"
+                android:background="@drawable/background_item"
                 android:contentDescription="@string/app_name"
                 android:onClick="onClick"
                 android:scaleType="fitCenter" />
@@ -61,6 +66,7 @@
                 android:id="@+id/gun_12"
                 android:layout_width="1dip"
                 android:layout_height="match_parent"
+                android:background="@drawable/background_item2"
                 android:contentDescription="@string/app_name"
                 android:onClick="onClick"
                 android:scaleType="fitCenter" />

@@ -9,14 +9,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-<!--     <ImageView
+    <!--
+         <ImageView
         android:id="@+id/light_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/player"
-        android:visibility="gone" /> -->
+        android:visibility="gone" />
+    -->
+
 
     <!--
     <Button
@@ -39,8 +42,7 @@
         android:layout_marginBottom="@dimen/layout_marginBottom"
         android:layout_marginLeft="@dimen/layout_marginRight"
         android:background="@drawable/blue_button"
-        android:onClick="onButtonClick" />
-    -->
+        android:onClick="onButtonClick" />    -->
 
     <Button
         android:id="@+id/right_button"
@@ -73,8 +75,7 @@
         android:layout_marginRight="@dimen/layout_marginRight"
         android:background="@drawable/blue_button"
         android:onClick="onButtonClick"
-        android:textSize="24dp" >
-    -->
+        android:textSize="24dp" >    -->
 
     <com.yesterdaylike.gun.Panel
         android:id="@+id/help_panel"
@@ -100,18 +101,20 @@
         android:id="@+id/page_number_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/layout_marginTop"
         android:layout_marginRight="@dimen/layout_marginRight"
-        android:layout_marginTop="@dimen/layout_marginTop"
         android:background="@drawable/yellow_button"
         android:onClick="onButtonClick" />
 
-<!--<View
+    <!--
+    <View
         android:id="@+id/cling"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@drawable/cling"
-        android:visibility="invisible" /> -->
+        android:visibility="invisible" />
+    -->
 
 </RelativeLayout>

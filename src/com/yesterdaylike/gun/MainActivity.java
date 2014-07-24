@@ -164,9 +164,9 @@ implements OnPageChangeListener, OnTouchListener{
 	}
 
 	private void BoardAnim(){
-		boardUpAnimation = AnimationUtils.loadAnimation(this, R.anim.board_up);
+		boardUpAnimation = AnimationUtils.loadAnimation(this, R.anim.board_right);
 		boardUpAnimation.setFillAfter(true);
-		boardDownAnimation = AnimationUtils.loadAnimation(this, R.anim.board_down);
+		boardDownAnimation = AnimationUtils.loadAnimation(this, R.anim.board_left);
 		boardDownAnimation.setFillAfter(true);
 		boardUpAnimation.setAnimationListener(new AnimationListener() {
 
