@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background2"
-        android:scaleType="fitCenter"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:scaleType="fitCenter" />
 
     <TextView
         android:id="@+id/gun_category_name"
@@ -20,10 +20,10 @@
         android:paddingBottom="2dp"
         android:paddingLeft="10dp"
         android:shadowColor="@android:color/darker_gray"
-        android:shadowRadius="3"
         android:shadowDx="2"
         android:shadowDy="2"
-        android:textSize="48sp"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:shadowRadius="3"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="48sp" />
 
 </RelativeLayout>

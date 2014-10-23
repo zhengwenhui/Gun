@@ -3,10 +3,6 @@ package com.yesterdaylike.gun;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.youmi.android.banner.AdSize;
-import net.youmi.android.banner.AdView;
-import net.youmi.android.diy.banner.DiyAdSize;
-import net.youmi.android.diy.banner.DiyBanner;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -21,8 +17,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.yesterdaylike.gun.PlayPagerAdapter.OnInstantiateItemListener;
 
@@ -96,7 +90,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		mViewPager.setOnTouchListener(this);
 		mViewPager.setCurrentItem(mTypeNo);
 		onPageSelected( mTypeNo );
-
+		/*
 		//获取要嵌入迷你广告条的布局
 		RelativeLayout miniBannerLayout=(RelativeLayout)findViewById(R.id.miniBannerLayout);
 		//demo 1 迷你Banner : 宽满屏，高32dp
@@ -120,7 +114,7 @@ implements OnPageChangeListener, OnTouchListener, OnInstantiateItemListener{
 		//获取要嵌入广告条的布局
 		LinearLayout adLayout=(LinearLayout)findViewById(R.id.adLayout);
 		//将广告条加入到布局中
-		adLayout.addView(adView);
+		adLayout.addView(adView);*/
 
 		//mLightView = (ImageView) findViewById(R.id.light_layout);
 		//LightAnim();

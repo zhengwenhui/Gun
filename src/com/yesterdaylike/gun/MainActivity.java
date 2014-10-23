@@ -3,7 +3,6 @@ package com.yesterdaylike.gun;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.youmi.android.AdManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -98,7 +97,7 @@ implements OnPageChangeListener, OnTouchListener{
 		mViewPager.setOnTouchListener(this);
 		onPageSelected( mCurrentIndex );
 
-		AdManager.getInstance(this).init("e7e50267ae23cb07","0ab58313c2d0be60", false); 
+		//AdManager.getInstance(this).init("e7e50267ae23cb07","0ab58313c2d0be60", false); 
 		//SmartBannerManager.init(this);
 		//SmartBannerManager.show(this);
 
